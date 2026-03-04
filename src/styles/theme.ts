@@ -6,15 +6,11 @@ export const theme = createTheme({
   palette: {
     primary: {
       main: vars.colorPrimary,
-      light: vars.colorPrimaryLight,
-      dark: vars.colorPrimaryDark,
-      contrastText: vars.colorContrast
+      contrastText: vars.colorBlack
     },
     secondary: {
-      main: vars.colorSecondaryMain,
-      light: vars.colorSecondaryLight,
-      dark: vars.colorSecondaryDark,
-      contrastText: vars.colorContrast
+      main: vars.colorSecondary,
+      contrastText: vars.colorWhite
     },
     error: {
       main: vars.colorError
@@ -32,5 +28,13 @@ export const theme = createTheme({
     fontWeightMedium: vars.fontWeightMedium,
     fontWeightBold: vars.fontWeightBold
   },
-  components: {}
+  components: {
+    MuiTypography: {
+      styleOverrides: {
+        root: {
+          fontSize: 'inherit'
+        }
+      }
+    }
+  }
 });

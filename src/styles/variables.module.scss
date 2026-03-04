@@ -1,23 +1,32 @@
 @use "./helpers" as *;
 
 /// colors ///
-$color-primary: #000;
-$color-primary-light: #000;
-$color-primary-dark: #000;
 
-$color-secondary: #000;
-$color-secondary-light: #000;
-$color-secondary-dark: #000;
+// backgrounds
+$color-bg: #0f0f0f; // фон страницы
+$color-surface: #1a1a1a; // хедер, футер, карточки
+$color-surface-2: #252525; // вторичные поверхности, hover-состояния
 
-$color-error: #000;
-$color-success: #000;
-$color-warning: #000;
+// accent (грани кубика)
+$color-primary: #f5a623; // оранжевая грань — CTA, активные элементы
+$color-secondary: #4a90e2; // синяя грань — ссылки, иконки, outline-кнопки
 
+// semantic
+$color-success: #27ae60; // зелёная грань
+$color-error: #e74c3c; // красная грань
+$color-warning: #f1c40f; // жёлтая грань
+
+// text
+$color-text-primary: #f0f0f0; // основной текст
+$color-text-secondary: #888888; // подписи, плейсхолдеры, неактивные элементы
+
+// misc
+$color-border: #2e2e2e; // бордеры, разделители
 $color-black: #000;
 $color-white: #fff;
 
 /// typography ///
-$font-primary: sans-serif;
+$font-primary: 'Tektur', sans-serif;
 
 $font-size-xs: 12px;
 $font-size-s: 14px;
@@ -72,16 +81,17 @@ $transition-slow: 760ms $easing-smooth;
 
 /// exports (for TypeScript) ///
 :export {
+  colorBg: $color-bg;
+  colorSurface: $color-surface;
+  colorSurface2: $color-surface-2;
   colorPrimary: $color-primary;
-  colorPrimaryLight: $color-primary-light;
-  colorPrimaryDark: $color-primary-dark;
-  colorSecondaryMain: $color-secondary;
-  colorSecondaryLight: $color-secondary-light;
-  colorSecondaryDark: $color-secondary-dark;
-  colorContrast: $color-white;
-  colorError: $color-error;
+  colorSecondary: $color-secondary;
   colorSuccess: $color-success;
+  colorError: $color-error;
   colorWarning: $color-warning;
+  colorTextPrimary: $color-text-primary;
+  colorTextSecondary: $color-text-secondary;
+  colorBorder: $color-border;
   colorBlack: $color-black;
   colorWhite: $color-white;
 
@@ -101,15 +111,17 @@ $transition-slow: 760ms $easing-smooth;
 
 :root {
   // colors
+  --color-bg: #{$color-bg};
+  --color-surface: #{$color-surface};
+  --color-surface-2: #{$color-surface-2};
   --color-primary: #{$color-primary};
-  --color-primary-light: #{$color-primary-light};
-  --color-primary-dark: #{$color-primary-dark};
   --color-secondary: #{$color-secondary};
-  --color-secondary-light: #{$color-secondary-light};
-  --color-secondary-dark: #{$color-secondary-dark};
-  --color-error: #{$color-error};
   --color-success: #{$color-success};
+  --color-error: #{$color-error};
   --color-warning: #{$color-warning};
+  --color-text-primary: #{$color-text-primary};
+  --color-text-secondary: #{$color-text-secondary};
+  --color-border: #{$color-border};
   --color-black: #{$color-black};
   --color-white: #{$color-white};
 

@@ -16,9 +16,9 @@ interface routingButtonsInterface {
 }
 
 const routingButtons: routingButtonsInterface[] = [
-  { key: 'naming', label: 'OBL naming', icon: <ArticleIcon /> },
-  { key: 'timer', label: 'OBL timer', icon: <TimerIcon /> },
-  { key: 'about', label: 'About', icon: <InfoIcon /> }
+  { key: 'about', label: 'About', icon: <InfoIcon /> },
+  { key: 'obl-naming', label: 'OBL naming', icon: <ArticleIcon /> },
+  { key: 'obl-timer', label: 'OBL timer', icon: <TimerIcon /> }
 ];
 
 const BaseLayout = () => {
@@ -32,7 +32,7 @@ const BaseLayout = () => {
   return (
     <Box className={styles.layoutWrapper}>
       <Box className={styles.layoutHeader}>
-        <Stack direction="row" spacing={2}>
+        <Stack direction="row" className={styles.navButtonsStack}>
           {routingButtons.map(({ key, label, icon }) => (
             <Button
               key={key}
@@ -50,7 +50,7 @@ const BaseLayout = () => {
         <Outlet />
       </Box>
       <Box className={styles.layoutFooter} alignContent="center" justifyContent="center">
-        <Typography variant="h5" component="div">
+        <Typography component="div">
           {`Copyright © ${new Date().getFullYear()} by `} <a href="https://github.com/kovdm1try">kovdm1try</a>
         </Typography>
       </Box>

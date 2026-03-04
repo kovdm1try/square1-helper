@@ -1,7 +1,74 @@
-.layoutWrapper {}
+@use "@/styles/helpers" as *;
 
-.layoutHeader {}
+@keyframes colorSpecter {
+  0%,
+  100% {
+    color: rgba(255, 0, 0, 0.6);
+  }
+  20% {
+    color: rgba(0, 83, 0, 0.6);
+  }
+  40% {
+    color: rgba(161, 133, 0, 0.6);
+  }
+  60% {
+    color: rgba(0, 0, 255, 0.6);
+  }
+  80% {
+    color: rgba(255, 78, 0, 0.6);
+  }
+}
 
-.layoutContent {}
+.layoutWrapper.layoutWrapper {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  max-width: 1500px;
+  min-height: 100vh;
+  width: 100%;
+}
 
-.layoutFooter {}
+.layoutHeader.layoutHeader {
+  height: 50px;
+  width: 100%;
+  display: flex;
+  @include flex-center();
+  padding: 0 var(--padding-xs) 0;
+}
+
+.layoutContent.layoutContent {
+  flex: 1;
+  padding: var(--padding-s) var(--padding-xs) 0;
+}
+
+.layoutFooter.layoutFooter {
+  height: 50px;
+  width: 100%;
+  display: flex;
+  @include flex-center();
+  color: rgba(0, 0, 0, 0.7);
+  font-size: var(--font-size-m);
+
+  & a {
+    color: rgba(0, 0, 0, 0.7);
+    font-weight: 600;
+    text-decoration: none;
+    transition: color var(--transition-base);
+
+    &:hover {
+      color: rgba(255, 0, 0, 0.6);
+      animation: colorSpecter 6s var(--transition-base) infinite;
+    }
+  }
+}
+
+.navButtonsStack.navButtonsStack {
+  gap: var(--gap-xs);
+}
+
+.navButton.navButton {
+  padding: 4px var(--padding-xs);
+  display: flex;
+  @include flex-center();
+  width: 130px;
+}
