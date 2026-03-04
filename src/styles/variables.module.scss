@@ -1,0 +1,162 @@
+@use "./helpers" as *;
+
+/// colors ///
+$color-primary: #000;
+$color-primary-light: #000;
+$color-primary-dark: #000;
+
+$color-secondary: #000;
+$color-secondary-light: #000;
+$color-secondary-dark: #000;
+
+$color-error: #000;
+$color-success: #000;
+$color-warning: #000;
+
+$color-black: #000;
+$color-white: #fff;
+
+/// typography ///
+$font-primary: sans-serif;
+
+$font-size-xs: 12px;
+$font-size-s: 14px;
+$font-size-m: 16px;
+$font-size-l: 18px;
+$font-size-xl: 22px;
+
+$font-weight-regular: 400;
+$font-weight-medium: 500;
+$font-weight-bold: 700;
+
+$line-height-s: 20px;
+$line-height-m: 24px;
+$line-height-l: 28px;
+
+/// spacing ///
+$radius-xs: 4px;
+$radius-s: 8px;
+$radius-m: 12px;
+$radius-l: 16px;
+
+$margin-xs: 8px;
+$margin-s: 12px;
+$margin-m: 16px;
+$margin-l: 24px;
+
+$padding-xs: 8px;
+$padding-s: 12px;
+$padding-m: 16px;
+$padding-l: 24px;
+
+$gap-xs: 8px;
+$gap-s: 12px;
+$gap-m: 16px;
+$gap-l: 24px;
+
+/// borders ///
+$border-width-thin: 1px;
+$border-default: $border-width-thin solid $color-black;
+
+/// z-indexes ///
+$z-base: 1;
+$z-header: 3;
+$z-controls: 5;
+$z-popup: 10;
+
+/// transitions ///
+$easing-smooth: cubic-bezier(0.22, 1, 0.36, 1);
+$transition-fast: 250ms $easing-smooth;
+$transition-base: 380ms $easing-smooth;
+$transition-slow: 760ms $easing-smooth;
+
+/// exports (for TypeScript) ///
+:export {
+  colorPrimary: $color-primary;
+  colorPrimaryLight: $color-primary-light;
+  colorPrimaryDark: $color-primary-dark;
+  colorSecondaryMain: $color-secondary;
+  colorSecondaryLight: $color-secondary-light;
+  colorSecondaryDark: $color-secondary-dark;
+  colorContrast: $color-white;
+  colorError: $color-error;
+  colorSuccess: $color-success;
+  colorWarning: $color-warning;
+  colorBlack: $color-black;
+  colorWhite: $color-white;
+
+  fontPrimary: $font-primary;
+  fontWeightRegular: $font-weight-regular;
+  fontWeightMedium: $font-weight-medium;
+  fontWeightBold: $font-weight-bold;
+
+  marginXS: $margin-xs;
+  marginS: $margin-s;
+  marginM: $margin-m;
+
+  radiusXS: $radius-xs;
+  radiusS: $radius-s;
+  radiusM: $radius-m;
+}
+
+:root {
+  // colors
+  --color-primary: #{$color-primary};
+  --color-primary-light: #{$color-primary-light};
+  --color-primary-dark: #{$color-primary-dark};
+  --color-secondary: #{$color-secondary};
+  --color-secondary-light: #{$color-secondary-light};
+  --color-secondary-dark: #{$color-secondary-dark};
+  --color-error: #{$color-error};
+  --color-success: #{$color-success};
+  --color-warning: #{$color-warning};
+  --color-black: #{$color-black};
+  --color-white: #{$color-white};
+
+  // typography
+  --font-family-base: #{$font-primary};
+  --font-size-xs: #{$font-size-xs};
+  --font-size-s: #{$font-size-s};
+  --font-size-m: #{$font-size-m};
+  --font-size-l: #{$font-size-l};
+  --font-size-xl: #{$font-size-xl};
+  --font-weight-regular: #{$font-weight-regular};
+  --font-weight-medium: #{$font-weight-medium};
+  --font-weight-bold: #{$font-weight-bold};
+  --line-height-s: #{$line-height-s};
+  --line-height-m: #{$line-height-m};
+  --line-height-l: #{$line-height-l};
+
+  // spacing
+  --radius-xs: #{$radius-xs};
+  --radius-s: #{$radius-s};
+  --radius-m: #{$radius-m};
+  --radius-l: #{$radius-l};
+  --margin-xs: #{$margin-xs};
+  --margin-s: #{$margin-s};
+  --margin-m: #{$margin-m};
+  --margin-l: #{$margin-l};
+  --padding-xs: #{$padding-xs};
+  --padding-s: #{$padding-s};
+  --padding-m: #{$padding-m};
+  --padding-l: #{$padding-l};
+  --gap-xs: #{$gap-xs};
+  --gap-s: #{$gap-s};
+  --gap-m: #{$gap-m};
+  --gap-l: #{$gap-l};
+
+  // borders
+  --border-width-thin: #{$border-width-thin};
+  --border-default: #{$border-default};
+
+  // z-indexes
+  --z-base: #{$z-base};
+  --z-header: #{$z-header};
+  --z-controls: #{$z-controls};
+  --z-popup: #{$z-popup};
+
+  // transitions
+  --transition-fast: #{$transition-fast};
+  --transition-base: #{$transition-base};
+  --transition-slow: #{$transition-slow};
+}

@@ -1,3 +1,5 @@
-dist
-node_modules
-*.min.css
+.gitignore
+.prettierignore
+package-lock.json
+build
+pnpm-lock.yaml

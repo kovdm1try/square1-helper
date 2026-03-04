@@ -4,9 +4,8 @@ export default {
     'postcss-pxtorem': {
       rootValue: 16,
       propList: ['*'],
-      minPixelValue: 2,
+      minPixelValue: 2
     },
-    cssnano:
-      process.env.NODE_ENV === 'production' ? { preset: 'default' } : false,
-  },
-}
+    cssnano: process.env.NODE_ENV === 'production' ? { preset: 'default' } : false
+  }
+};

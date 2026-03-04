@@ -1,0 +1,36 @@
+.container {
+  width: 100%;
+  max-width: calc(var(--container-max-width) + var(--container-padding-x) * 2);
+  margin-inline: auto;
+  padding-inline: var(--container-padding-x);
+}
+
+.visially-hidden {
+  @include visualy-hidden;
+
+  // иногда visually-hidden будет вызываться опционгально, поэтому помимо миксина существует еще класс
+}
+
+.visible-table {
+  @include tablet-above {
+    display: none !important; // !important плохая практика, но для утилитарных классов можно :)
+  }
+}
+
+.hidden-table {
+  @include tablet {
+    display: none !important; // !important плохая практика, но для утилитарных классов можно :)
+  }
+}
+
+.visible-mobile {
+  @include mobile-above {
+    display: none !important; // !important плохая практика, но для утилитарных классов можно :)
+  }
+}
+
+.hidden-mobile {
+  @include mobile {
+    display: none !important; // !important плохая практика, но для утилитарных классов можно :)
+  }
+}
