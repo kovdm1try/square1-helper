@@ -1,27 +1,36 @@
 @use "./helpers" as *;
 
-/// colors ///
 
-// backgrounds
-$color-bg: #0f0f0f; // фон страницы
-$color-surface: #1a1a1a; // хедер, футер, карточки
-$color-surface-2: #252525; // вторичные поверхности, hover-состояния
+// dark theme backgrounds
+$color-bg: #0f0f0f;
+$color-surface: #1a1a1a;
+$color-surface-2: #252525;
 
-// accent (грани кубика)
-$color-primary: #f5a623; // оранжевая грань — CTA, активные элементы
-$color-secondary: #4a90e2; // синяя грань — ссылки, иконки, outline-кнопки
+// light theme backgrounds
+$color-bg-light: #f8f8f8;
+$color-surface-light: #ffffff;
+$color-surface-2-light: #ebebeb;
 
-// semantic
-$color-success: #27ae60; // зелёная грань
-$color-error: #e74c3c; // красная грань
-$color-warning: #f1c40f; // жёлтая грань
+// accent
+$color-primary: #f5a623;
+$color-secondary: #4a90e2;
+$color-success: #27ae60;
+$color-error: #e74c3c;
+$color-warning: #f1c40f;
 
-// text
-$color-text-primary: #f0f0f0; // основной текст
-$color-text-secondary: #888888; // подписи, плейсхолдеры, неактивные элементы
+// dark theme text
+$color-text-primary: #f0f0f0;
+$color-text-secondary: #888888;
 
-// misc
-$color-border: #2e2e2e; // бордеры, разделители
+// light theme text
+$color-text-primary-light: #1a1a1a;
+$color-text-secondary-light: #666666;
+
+// dark theme misc
+$color-border: #2e2e2e;
+
+// light theme misc
+$color-border-light: #d0d0d0;
 $color-black: #000;
 $color-white: #fff;
 
@@ -79,11 +88,12 @@ $transition-fast: 250ms $easing-smooth;
 $transition-base: 380ms $easing-smooth;
 $transition-slow: 760ms $easing-smooth;
 
-/// exports (for TypeScript) ///
 :export {
   colorBg: $color-bg;
   colorSurface: $color-surface;
   colorSurface2: $color-surface-2;
+  colorBgLight: $color-bg-light;
+  colorSurfaceLight: $color-surface-light;
   colorPrimary: $color-primary;
   colorSecondary: $color-secondary;
   colorSuccess: $color-success;
@@ -171,4 +181,13 @@ $transition-slow: 760ms $easing-smooth;
   --transition-fast: #{$transition-fast};
   --transition-base: #{$transition-base};
   --transition-slow: #{$transition-slow};
+}
+
+[data-theme='light'] {
+  --color-bg: #{$color-bg-light};
+  --color-surface: #{$color-surface-light};
+  --color-surface-2: #{$color-surface-2-light};
+  --color-text-primary: #{$color-text-primary-light};
+  --color-text-secondary: #{$color-text-secondary-light};
+  --color-border: #{$color-border-light};
 }
