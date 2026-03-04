@@ -2,16 +2,28 @@ import { BrowserRouter } from 'react-router-dom';
 
 import { ThemeProvider } from '@mui/material/styles';
 
-import Navigation from '@/navigation/Navigate';
-import { theme } from '@/styles';
+import { ThemeContextProvider, useThemeContext } from '@/context/ThemeContext';
 
-function App() {
+import Navigation from '@/navigation/Navigate';
+import { darkTheme, lightTheme } from '@/styles';
+
+const AppWithTheme = () => {
+  const { isDark } = useThemeContext();
+
   return (
-    <ThemeProvider theme={theme}>
+    <ThemeProvider theme={isDark ? darkTheme : lightTheme}>
       <BrowserRouter>
         <Navigation />
       </BrowserRouter>
     </ThemeProvider>
+  );
+};
+
+function App() {
+  return (
+    <ThemeContextProvider>
+      <AppWithTheme />
+    </ThemeContextProvider>
   );
 }
 
