@@ -65,6 +65,12 @@
   display: flex;
   @include flex-center();
   width: 130px;
+  box-shadow: 0 0 5px transparent;
+  transition: box-shadow var(--transition-base);
+
+  &.activeNavButton {
+    box-shadow: 0 0 5px var(--color-primary);
+  }
 }
 
 .headerSpacer.headerSpacer {
