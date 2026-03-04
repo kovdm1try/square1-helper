@@ -1,24 +1,5 @@
 @use "@/styles/helpers" as *;
 
-@keyframes colorSpecter {
-  0%,
-  100% {
-    color: rgba(255, 0, 0, 0.6);
-  }
-  20% {
-    color: rgba(0, 83, 0, 0.6);
-  }
-  40% {
-    color: rgba(161, 133, 0, 0.6);
-  }
-  60% {
-    color: rgba(0, 0, 255, 0.6);
-  }
-  80% {
-    color: rgba(255, 78, 0, 0.6);
-  }
-}
-
 .layoutWrapper.layoutWrapper {
   display: flex;
   flex-direction: column;
@@ -35,6 +16,12 @@
   align-items: center;
   justify-content: space-between;
   padding: 0 var(--padding-xs) 0;
+
+  @media (width <= 1000px) {
+    padding: 0 var(--padding-s) 0;
+    justify-content: flex-end;
+    align-items: center;
+  }
 }
 
 .layoutContent.layoutContent {
@@ -51,20 +38,26 @@
   font-size: var(--font-size-m);
 
   & a {
-    color: var(--color-text-secondary);
+    color: var(--color-primary);
+    opacity: 0.7;
     font-weight: 600;
     text-decoration: none;
-    transition: color var(--transition-base);
+    transition: opacity var(--transition-base);
+    padding: 6px;
+    margin: -6px;
 
     &:hover {
-      color: rgba(255, 0, 0, 0.6);
-      animation: colorSpecter 6s var(--transition-base) infinite;
+      opacity: 1;
     }
   }
 }
 
 .navButtonsStack.navButtonsStack {
   gap: var(--gap-xs);
+
+  @media (width <= 1000px) {
+    display: none;
+  }
 }
 
 .navButton.navButton {
@@ -81,4 +74,8 @@
 
 .themeToggle.themeToggle {
   flex-shrink: 0;
+
+  @media (width <= 1000px) {
+    display: none;
+  }
 }

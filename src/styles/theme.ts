@@ -3,14 +3,6 @@ import { createTheme } from '@mui/material/styles';
 import vars from './variables.module.scss';
 
 const commonPalette = {
-  primary: {
-    main: vars.colorPrimary,
-    contrastText: vars.colorBlack
-  },
-  secondary: {
-    main: vars.colorSecondary,
-    contrastText: vars.colorWhite
-  },
   error: {
     main: vars.colorError
   },
@@ -29,6 +21,10 @@ const commonOptions = {
     fontWeightMedium: vars.fontWeightMedium,
     fontWeightBold: vars.fontWeightBold
   },
+  zIndex: {
+    backdrop: 10,
+    loader: 11
+  },
   components: {
     MuiTypography: {
       styleOverrides: {
@@ -44,6 +40,14 @@ export const darkTheme = createTheme({
   ...commonOptions,
   palette: {
     ...commonPalette,
+    primary: {
+      main: vars.colorPrimary,
+      contrastText: vars.colorBlack
+    },
+    secondary: {
+      main: vars.colorSecondary,
+      contrastText: vars.colorWhite
+    },
     mode: 'dark',
     background: {
       default: vars.colorBg,
@@ -56,6 +60,14 @@ export const lightTheme = createTheme({
   ...commonOptions,
   palette: {
     ...commonPalette,
+    primary: {
+      main: vars.colorSecondary,
+      contrastText: vars.colorWhite
+    },
+    secondary: {
+      main: vars.colorPrimary,
+      contrastText: vars.colorBlack
+    },
     mode: 'light',
     background: {
       default: vars.colorBgLight,
