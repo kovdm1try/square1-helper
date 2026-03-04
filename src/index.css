@@ -8,5 +8,5 @@ body {
   background-color: var(--color-bg);
   color: var(--color-text-primary);
   margin: 0;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  transition: background-color var(--transition-base), color var(--transition-base);
 }

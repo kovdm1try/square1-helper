@@ -55,6 +55,13 @@ export default tseslint.config(
   },
 
   {
+    files: ['**/*.d.ts'],
+    rules: {
+      '@typescript-eslint/no-unused-vars': 'off'
+    }
+  },
+
+  {
     languageOptions: {
       globals: {
         ...globals.browser,

@@ -9,6 +9,8 @@ import TimerIcon from '@mui/icons-material/Timer';
 import { Box, Button, IconButton, Stack, Typography } from '@mui/material';
 import classNames from 'classnames';
 
+import Burger, { type BurgerMenuItem } from '@/components/Burger';
+
 import { useThemeContext } from '@/context/ThemeContext';
 
 import styles from './BaseLayout.module.scss';
@@ -35,6 +37,19 @@ const BaseLayout = () => {
     navigate(`/${key}`);
   };
 
+  const burgerMenuItems: BurgerMenuItem[] = [
+    ...routingButtons.map(({ key, label }) => ({
+      label,
+      action: () => handleNavButtonClick(key)
+    })),
+    {
+      label: 'theme',
+      icon: isDark ? <LightModeIcon /> : <DarkModeIcon />,
+      action: toggleTheme,
+      noClose: true
+    }
+  ];
+
   return (
     <Box className={styles.layoutWrapper}>
       <Box className={styles.layoutHeader}>
@@ -45,7 +60,7 @@ const BaseLayout = () => {
             <Button
               key={key}
               startIcon={icon}
-              color="secondary"
+              color="primary"
               onClick={() => handleNavButtonClick(key)}
               className={classNames(styles.navButton, { [styles.activeNavButton]: location.pathname === `/${key}` })}
             >
@@ -54,7 +69,9 @@ const BaseLayout = () => {
           ))}
         </Stack>
 
-        <IconButton onClick={toggleTheme} color="secondary" className={styles.themeToggle}>
+        <Burger items={burgerMenuItems} />
+
+        <IconButton onClick={toggleTheme} color="primary" className={styles.themeToggle}>
           {isDark ? <LightModeIcon /> : <DarkModeIcon />}
         </IconButton>
       </Box>

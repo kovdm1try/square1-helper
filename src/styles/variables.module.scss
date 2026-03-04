@@ -190,4 +190,6 @@ $transition-slow: 760ms $easing-smooth;
   --color-text-primary: #{$color-text-primary-light};
   --color-text-secondary: #{$color-text-secondary-light};
   --color-border: #{$color-border-light};
+  --color-secondary: #{$color-primary};
+  --color-primary: #{$color-secondary};
 }
