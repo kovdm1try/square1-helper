@@ -13,6 +13,8 @@ export const ThemeContextProvider = ({ children }: { children: ReactNode }) => {
 
   useEffect(() => {
     document.documentElement.setAttribute('data-theme', isDark ? 'dark' : 'light');
+    const meta = document.querySelector<HTMLMetaElement>('meta[name="theme-color"]');
+    if (meta) meta.content = isDark ? '#0f0f0f' : '#f8f8f8';
   }, [isDark]);
 
   const toggleTheme = () => setIsDark((prev) => !prev);
