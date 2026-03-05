@@ -19,12 +19,13 @@ interface routingButtonsInterface {
   key: string;
   label: string;
   icon: ReactElement;
+  disabled: boolean;
 }
 
 const routingButtons: routingButtonsInterface[] = [
-  { key: 'about', label: 'About', icon: <InfoIcon /> },
-  { key: 'obl-naming', label: 'OBL naming', icon: <ArticleIcon /> },
-  { key: 'obl-timer', label: 'OBL timer', icon: <TimerIcon /> }
+  { key: 'about', label: 'About', icon: <InfoIcon />, disabled: false },
+  { key: 'obl-naming', label: 'OBL naming', icon: <ArticleIcon />, disabled: true },
+  { key: 'timer', label: 'Timer', icon: <TimerIcon />, disabled: true }
 ];
 
 const BaseLayout = () => {

@@ -6,6 +6,7 @@ $header-height: 50px;
   to {
     background-color: var(--color-surface-2);
     box-shadow: 0 0 10px var(--color-primary);
+    height: calc($header-height - 5px);
   }
 }
 
@@ -54,11 +55,13 @@ $header-height: 50px;
 .layoutContent.layoutContent {
   @extend .limitedHeightAndCentred;
   flex: 1;
-  padding: var(--padding-s) var(--padding-xs) 0;
+  padding: var(--padding-m) var(--padding-xs) 0;
+  display: flex;
+  justify-content: center;
 }
 
 .layoutFooter.layoutFooter {
-  height: 50px;
+  height: 100px;
   width: 100%;
   display: flex;
   @include flex-center();
