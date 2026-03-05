@@ -1,21 +1,36 @@
 @use "@/styles/helpers" as *;
 
+$header-height: 50px;
+
+@keyframes header-fill {
+  to {
+    background-color: var(--color-surface-2);
+    box-shadow: 0 0 10px var(--color-primary);
+  }
+}
+
+.limitedHeightAndCentred {
+  width: 100%;
+  max-width: 1500px;
+  margin: 0 auto;
+}
+
 .layoutWrapper.layoutWrapper {
   display: flex;
   flex-direction: column;
   margin: 0 auto;
-  max-width: 1500px;
   min-height: 100vh;
   width: 100%;
 }
 
 .layoutHeader.layoutHeader {
-  height: 50px;
+  @extend .limitedHeightAndCentred;
   width: 100%;
+  height: $header-height;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 var(--padding-xs) 0;
+  padding: 0 var(--padding-s) 0;
 
   @media (width <= 1000px) {
     padding: 0 var(--padding-s) 0;
@@ -24,7 +39,20 @@
   }
 }
 
+.headerBackground.headerBackground {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  height: $header-height;
+  background-color: transparent;
+  animation-name: header-fill;
+  animation-fill-mode: both;
+  animation-timeline: scroll();
+  animation-range: 0 50px;
+}
+
 .layoutContent.layoutContent {
+  @extend .limitedHeightAndCentred;
   flex: 1;
   padding: var(--padding-s) var(--padding-xs) 0;
 }
@@ -54,6 +82,7 @@
 
 .navButtonsStack.navButtonsStack {
   gap: var(--gap-xs);
+  height: 90%;
 
   @media (width <= 1000px) {
     display: none;
@@ -63,13 +92,16 @@
 .navButton.navButton {
   padding: 4px var(--padding-xs);
   display: flex;
+  height: 100%;
   @include flex-center();
   width: 130px;
   box-shadow: 0 0 5px transparent;
-  transition: box-shadow var(--transition-base);
+  transition: box-shadow var(--transition-base), background-color var(--transition-base), color var(--transition-base);
 
   &.activeNavButton {
     box-shadow: 0 0 5px var(--color-primary);
+    cursor: default;
+    pointer-events: none;
   }
 }
 
