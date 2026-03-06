@@ -11,5 +11,5 @@ export default defineConfig({
       '@': resolve(__dirname, './src')
     }
   },
-  base: 'square1-helper'
+  base: '/square1-helper/'
 });

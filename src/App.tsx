@@ -1,4 +1,4 @@
-import { BrowserRouter } from 'react-router-dom';
+import { HashRouter } from 'react-router-dom';
 
 import { ThemeProvider } from '@mui/material/styles';
 
@@ -12,9 +12,9 @@ const AppWithTheme = () => {
 
   return (
     <ThemeProvider theme={isDark ? darkTheme : lightTheme}>
-      <BrowserRouter>
+      <HashRouter>
         <Navigation />
-      </BrowserRouter>
+      </HashRouter>
     </ThemeProvider>
   );
 };
