@@ -1,7 +1,7 @@
 import { Box, Typography } from '@mui/material';
 import classNames from 'classnames';
 
-import SquareCube from '@/components/squareCube';
+import SquareWrapper from '@/components/Square/SquareWrapper';
 
 import styles from './About.module.scss';
 
@@ -35,19 +35,22 @@ const About = () => {
         </a>
         . Every bit of support means a lot!
       </Typography>
-      <SquareCube
-        blocks={[
-          { blockType: 2, color: 'y' },
-          { blockType: 1, color: 'y' },
-          { blockType: 2, color: 'y' },
-          { blockType: 1, color: 'y' },
-          { blockType: 2, color: 'y' },
-          { blockType: 1, color: 'y' },
-          { blockType: 2, color: 'y' },
-          { blockType: 1, color: 'y' }
-        ]}
-        rotate={0}
-      />
+      <Box className={styles.cubeWrapper}>
+        <SquareWrapper
+          blocks={[
+            { blockType: 1, color: 'y' },
+            { blockType: 2, color: 'y' },
+            { blockType: 1, color: 'y' },
+            { blockType: 2, color: 'y' },
+            { blockType: 1, color: 'y' },
+            { blockType: 2, color: 'y' },
+            { blockType: 1, color: 'y' },
+            { blockType: 2, color: 'y' }
+          ]}
+          startRotate={30}
+          rotateOnHover={-30}
+        />
+      </Box>
     </Box>
   );
 };

@@ -50,6 +50,7 @@ $header-height: 50px;
   animation-fill-mode: both;
   animation-timeline: scroll();
   animation-range: 0 50px;
+  z-index: 5;
 }
 
 .layoutContent.layoutContent {
