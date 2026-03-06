@@ -39,9 +39,10 @@ const BaseLayout = () => {
   };
 
   const burgerMenuItems: BurgerMenuItem[] = [
-    ...routingButtons.map(({ key, label }) => ({
+    ...routingButtons.map(({ key, label, disabled }) => ({
       label,
-      action: () => handleNavButtonClick(key)
+      action: () => handleNavButtonClick(key),
+      disabled
     })),
     {
       label: 'theme',
@@ -58,8 +59,9 @@ const BaseLayout = () => {
           <Box className={styles.headerSpacer} />
 
           <Stack direction="row" className={styles.navButtonsStack}>
-            {routingButtons.map(({ key, label, icon }) => (
+            {routingButtons.map(({ key, label, icon, disabled }) => (
               <Button
+                disabled={disabled}
                 key={key}
                 startIcon={icon}
                 color="primary"

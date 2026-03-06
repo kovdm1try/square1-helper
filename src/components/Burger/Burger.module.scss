@@ -121,4 +121,9 @@
     color: var(--color-primary);
     transform: scale(1.05);
   }
+
+  &:disabled {
+    opacity: 0.7;
+    pointer-events: none;
+  }
 }

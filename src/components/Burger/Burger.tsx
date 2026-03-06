@@ -6,6 +6,7 @@ export interface BurgerMenuItem {
   label: string;
   icon?: ReactNode;
   action: () => void;
+  disabled?: boolean;
   noClose?: boolean;
 }
 
@@ -69,6 +70,7 @@ const Burger: FC<BurgerMenuProps> = ({ items }) => {
                 key={item.label}
                 className={`${styles.menuItem} ${item.noClose ? styles.menuItemSeparated : ''}`}
                 onClick={() => handleItemClick(item)}
+                disabled={item.disabled}
               >
                 {item.icon ?? item.label}
               </button>

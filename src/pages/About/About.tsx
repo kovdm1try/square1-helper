@@ -49,6 +49,7 @@ const About = () => {
           ]}
           startRotate={30}
           rotateOnHover={-30}
+          scale={0.9}
         />
       </Box>
     </Box>
