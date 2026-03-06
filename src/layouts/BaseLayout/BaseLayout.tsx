@@ -19,12 +19,13 @@ interface routingButtonsInterface {
   key: string;
   label: string;
   icon: ReactElement;
+  disabled: boolean;
 }
 
 const routingButtons: routingButtonsInterface[] = [
-  { key: 'about', label: 'About', icon: <InfoIcon /> },
-  { key: 'obl-naming', label: 'OBL naming', icon: <ArticleIcon /> },
-  { key: 'obl-timer', label: 'OBL timer', icon: <TimerIcon /> }
+  { key: 'about', label: 'About', icon: <InfoIcon />, disabled: false },
+  { key: 'obl-naming', label: 'OBL naming', icon: <ArticleIcon />, disabled: true },
+  { key: 'timer', label: 'Timer', icon: <TimerIcon />, disabled: true }
 ];
 
 const BaseLayout = () => {
@@ -52,30 +53,31 @@ const BaseLayout = () => {
 
   return (
     <Box className={styles.layoutWrapper}>
-      <Box className={styles.layoutHeader}>
-        <Box className={styles.headerSpacer} />
+      <Box className={styles.headerBackground}>
+        <Box className={styles.layoutHeader}>
+          <Box className={styles.headerSpacer} />
 
-        <Stack direction="row" className={styles.navButtonsStack}>
-          {routingButtons.map(({ key, label, icon }) => (
-            <Button
-              key={key}
-              startIcon={icon}
-              color="primary"
-              onClick={() => handleNavButtonClick(key)}
-              className={classNames(styles.navButton, { [styles.activeNavButton]: location.pathname === `/${key}` })}
-            >
-              {label}
-            </Button>
-          ))}
-        </Stack>
+          <Stack direction="row" className={styles.navButtonsStack}>
+            {routingButtons.map(({ key, label, icon }) => (
+              <Button
+                key={key}
+                startIcon={icon}
+                color="primary"
+                onClick={() => handleNavButtonClick(key)}
+                className={classNames(styles.navButton, { [styles.activeNavButton]: location.pathname === `/${key}` })}
+              >
+                {label}
+              </Button>
+            ))}
+          </Stack>
 
-        <Burger items={burgerMenuItems} />
+          <Burger items={burgerMenuItems} />
 
-        <IconButton onClick={toggleTheme} color="primary" className={styles.themeToggle}>
-          {isDark ? <LightModeIcon /> : <DarkModeIcon />}
-        </IconButton>
+          <IconButton onClick={toggleTheme} color="primary" className={styles.themeToggle}>
+            {isDark ? <LightModeIcon /> : <DarkModeIcon />}
+          </IconButton>
+        </Box>
       </Box>
-
       <Box className={styles.layoutContent}>
         <Outlet />
       </Box>

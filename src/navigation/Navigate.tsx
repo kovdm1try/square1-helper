@@ -11,7 +11,7 @@ const Navigation = () => {
       children: [
         { index: true, path: '/', element: <Navigate to="/about" replace /> },
         { path: '/obl-naming', element: <div>naming</div> },
-        { path: '/obl-timer', element: <div>timer</div> },
+        { path: '/timer', element: <div>timer</div> },
         { path: 'about', element: <About /> }
       ]
     },

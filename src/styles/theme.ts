@@ -32,6 +32,13 @@ const commonOptions = {
           fontSize: 'inherit'
         }
       }
+    },
+    MuiButton: {
+      styleOverrides: {
+        root: {
+          transition: 'background-color var(--transition-base), color var(--transition-base)'
+        }
+      }
     }
   }
 };
