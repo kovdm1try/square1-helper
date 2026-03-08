@@ -71,7 +71,6 @@ const SquareCube: FC<SquareCubeProps> = ({ blocks, rotate, rotateOnHover }) => {
       { result: [], curRotate: 0 }
     ).result;
   }, [blocks]);
-  console.log(processedBlocks);
 
   return (
     <svg

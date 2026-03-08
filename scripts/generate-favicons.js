@@ -18,7 +18,6 @@ const sizes = [
 
 for (const { name, size } of sizes) {
   await sharp(svgBuffer).resize(size, size).png().toFile(resolve(publicDir, name));
-  console.log(`✓ ${name}`);
 }
 
 const ico32 = await sharp(svgBuffer).resize(32, 32).png().toBuffer();
