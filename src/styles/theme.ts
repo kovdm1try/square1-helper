@@ -1,3 +1,4 @@
+import type { Theme } from '@mui/material';
 import { createTheme } from '@mui/material/styles';
 
 import vars from './variables.module.scss';
@@ -36,9 +37,21 @@ const commonOptions = {
     MuiButton: {
       styleOverrides: {
         root: {
+          boxSizing: 'border-box',
+          boxShadow: 'none',
           transition: 'background-color var(--transition-base), color var(--transition-base)'
-        }
-      }
+        },
+        outlined: ({ theme }: { theme: Theme }) => ({
+          borderWidth: '2px',
+          borderColor: theme.palette.primary.main,
+          opacity: 0.85,
+          transition:
+            'opacity var(--transition-base), background-color var(--transition-base), color var(--transition-base)',
+          '&:hover': {
+            opacity: 1
+          }
+        })
+      } as const
     }
   }
 };
