@@ -89,7 +89,7 @@ const SquareCube: FC<SquareCubeProps> = ({ blocks, rotate, rotateOnHover }) => {
         <g key={index} transform={`translate(${centerCord}, ${centerCord}) rotate(${blockRotate})`}>
           <path
             d={[EDGE_PATH, CORNER_PATH][block.blockType - 1]}
-            fill="yellow"
+            fill={block.color === 'y' ? 'yellow' : 'white'}
             stroke="black"
             strokeWidth="2"
             transform={`rotate(${block.blockType === 2 ? 60 : 0})`}

@@ -65,6 +65,8 @@ const BaseLayout = () => {
                 key={key}
                 startIcon={icon}
                 color="primary"
+                onMouseDown={(e) => e.stopPropagation()}
+                onTouchStart={(e) => e.stopPropagation()}
                 onClick={() => handleNavButtonClick(key)}
                 className={classNames(styles.navButton, { [styles.activeNavButton]: location.pathname === `/${key}` })}
               >
@@ -75,7 +77,13 @@ const BaseLayout = () => {
 
           <Burger items={burgerMenuItems} />
 
-          <IconButton onClick={toggleTheme} color="primary" className={styles.themeToggle}>
+          <IconButton
+            onClick={toggleTheme}
+            color="primary"
+            className={styles.themeToggle}
+            onMouseDown={(e) => e.stopPropagation()}
+            onTouchStart={(e) => e.stopPropagation()}
+          >
             {isDark ? <LightModeIcon /> : <DarkModeIcon />}
           </IconButton>
         </Box>
