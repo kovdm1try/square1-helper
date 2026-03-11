@@ -3,6 +3,7 @@ import { Navigate, useRoutes } from 'react-router-dom';
 import BaseLayout from '@/layouts/BaseLayout';
 import About from '@/pages/About';
 import ErrorPage from '@/pages/ErrorPage';
+import TimerPage from '@/pages/TimerPage';
 
 const Navigation = () => {
   const routes = [
@@ -11,7 +12,7 @@ const Navigation = () => {
       children: [
         { index: true, path: '/', element: <Navigate to="/about" replace /> },
         { path: '/obl-naming', element: <div>naming</div> },
-        { path: '/timer', element: <div>timer</div> },
+        { path: '/timer', element: <TimerPage /> },
         { path: 'about', element: <About /> }
       ]
     },

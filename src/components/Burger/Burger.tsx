@@ -1,4 +1,4 @@
-import { type FC, type ReactNode, useEffect, useState } from 'react';
+import { type FC, type ReactNode, useEffect, useRef, useState } from 'react';
 
 import styles from './Burger.module.scss';
 
@@ -16,6 +16,7 @@ interface BurgerMenuProps {
 
 const Burger: FC<BurgerMenuProps> = ({ items }) => {
   const [isOpen, setIsOpen] = useState(false);
+  const savedScrollY = useRef(0);
 
   const handleToggle = () => {
     setIsOpen((prev) => !prev);
@@ -23,24 +24,18 @@ const Burger: FC<BurgerMenuProps> = ({ items }) => {
 
   useEffect(() => {
     if (isOpen) {
+      savedScrollY.current = window.scrollY;
       document.body.style.overflow = 'hidden';
       document.body.style.position = 'fixed';
       document.body.style.width = '100%';
-      document.body.style.top = `-${window.scrollY}px`;
+      document.body.style.top = `-${savedScrollY.current}px`;
     } else {
-      const scrollY = document.body.style.top;
       document.body.style.overflow = '';
       document.body.style.position = '';
       document.body.style.width = '';
       document.body.style.top = '';
-      window.scrollTo(0, parseInt(scrollY || '0') * -1);
+      window.scrollTo(0, savedScrollY.current);
     }
-    return () => {
-      document.body.style.overflow = '';
-      document.body.style.position = '';
-      document.body.style.width = '';
-      document.body.style.top = '';
-    };
   }, [isOpen]);
 
   const handleItemClick = (item: BurgerMenuItem) => {

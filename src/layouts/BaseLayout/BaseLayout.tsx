@@ -25,7 +25,7 @@ interface routingButtonsInterface {
 const routingButtons: routingButtonsInterface[] = [
   { key: 'about', label: 'About', icon: <InfoIcon />, disabled: false },
   { key: 'obl-naming', label: 'OBL naming', icon: <ArticleIcon />, disabled: true },
-  { key: 'timer', label: 'Timer', icon: <TimerIcon />, disabled: true }
+  { key: 'timer', label: 'Timer', icon: <TimerIcon />, disabled: false }
 ];
 
 const BaseLayout = () => {
@@ -65,6 +65,8 @@ const BaseLayout = () => {
                 key={key}
                 startIcon={icon}
                 color="primary"
+                onMouseDown={(e) => e.stopPropagation()}
+                onTouchStart={(e) => e.stopPropagation()}
                 onClick={() => handleNavButtonClick(key)}
                 className={classNames(styles.navButton, { [styles.activeNavButton]: location.pathname === `/${key}` })}
               >
@@ -75,7 +77,13 @@ const BaseLayout = () => {
 
           <Burger items={burgerMenuItems} />
 
-          <IconButton onClick={toggleTheme} color="primary" className={styles.themeToggle}>
+          <IconButton
+            onClick={toggleTheme}
+            color="primary"
+            className={styles.themeToggle}
+            onMouseDown={(e) => e.stopPropagation()}
+            onTouchStart={(e) => e.stopPropagation()}
+          >
             {isDark ? <LightModeIcon /> : <DarkModeIcon />}
           </IconButton>
         </Box>

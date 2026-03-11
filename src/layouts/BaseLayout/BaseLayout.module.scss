@@ -56,15 +56,20 @@ $header-height: 50px;
 .layoutContent.layoutContent {
   @extend .limitedHeightAndCentred;
   flex: 1;
-  padding: var(--padding-m) var(--padding-xs) 0;
+  padding: var(--padding-xs) var(--padding-xs) 0;
   display: flex;
   justify-content: center;
+
+  @media (width <= 1000px) {
+    padding: 0 var(--padding-xs);
+  }
 }
 
 .layoutFooter.layoutFooter {
   height: 100px;
   width: 100%;
   display: flex;
+  text-align: center;
   @include flex-center();
   color: var(--color-text-secondary);
   font-size: var(--font-size-m);
