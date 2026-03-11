@@ -11,5 +11,11 @@ export default defineConfig({
       '@': resolve(__dirname, './src')
     }
   },
-  base: '/square1-helper/'
+  base: '/square1-helper/',
+  optimizeDeps: {
+    exclude: ['cubing']
+  },
+  worker: {
+    format: 'es'
+  }
 });
