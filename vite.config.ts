@@ -16,6 +16,15 @@ export default defineConfig({
     exclude: ['cubing']
   },
   build: {
-    target: 'esnext'
+    target: 'esnext',
+    rollupOptions: {
+      output: {
+        manualChunks: (id) => {
+          if (id.includes('cubing') || id.includes('twips')) {
+            return 'cubing';
+          }
+        }
+      }
+    }
   }
 });
