@@ -31,6 +31,7 @@ const TimerPage = () => {
 
   const timerStartedRef = useRef(false);
   const timerReadyRef = useRef(false);
+  const scrambleRef = useRef('');
   const startTimeRef = useRef(0);
   const rafRef = useRef<number | null>(null);
 
@@ -50,6 +51,10 @@ const TimerPage = () => {
   useEffect(() => {
     timerReadyRef.current = timerReady;
   }, [timerReady]);
+
+  useEffect(() => {
+    scrambleRef.current = scramble;
+  }, [scramble]);
 
   useEffect(() => {
     if (!scramble) dispatch(fetchScramble());
@@ -80,6 +85,8 @@ const TimerPage = () => {
         setTimerStarted(false);
         return;
       }
+
+      if (!scrambleRef.current) return;
 
       setTimerReady(true);
     };
@@ -114,7 +121,7 @@ const TimerPage = () => {
   return (
     <Box className={styles.timerPageWrapper}>
       <Paper className={styles.scrambleHandler} elevation={0} onClick={(e) => e.preventDefault()}>
-        {scramble || <Loader />}
+        {scramble || <Loader isOverlay={false} />}
       </Paper>
       <Box className={styles.buttonsWrapper}>
         <Grid container className={styles.scrambleButtons}>
