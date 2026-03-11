@@ -15,9 +15,6 @@ export default defineConfig({
   optimizeDeps: {
     exclude: ['cubing']
   },
-  worker: {
-    format: 'es'
-  },
   build: {
     target: 'esnext'
   }
