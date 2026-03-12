@@ -17,6 +17,10 @@ export default defineConfig({
   },
   build: {
     target: 'esnext',
+    minify: 'terser',
+    terserOptions: {
+      compress: { passes: 2 }
+    },
     rollupOptions: {
       output: {
         manualChunks: (id) => {
