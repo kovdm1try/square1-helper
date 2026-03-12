@@ -79,7 +79,7 @@ const TimerPage = () => {
   useEffect(() => {
     const handleDown = (e: Event) => {
       if (e instanceof KeyboardEvent && e.code !== 'Enter' && e.code !== 'Space') return;
-      if (e instanceof KeyboardEvent) e.preventDefault();
+      if (e instanceof TouchEvent || e instanceof KeyboardEvent) e.preventDefault();
 
       if (timerStartedRef.current) {
         setTimerStarted(false);
@@ -102,7 +102,7 @@ const TimerPage = () => {
     };
 
     window.addEventListener('mousedown', handleDown);
-    window.addEventListener('touchstart', handleDown);
+    window.addEventListener('touchstart', handleDown, { passive: false });
     window.addEventListener('keydown', handleDown);
     window.addEventListener('mouseup', handleUp);
     window.addEventListener('touchend', handleUp);
