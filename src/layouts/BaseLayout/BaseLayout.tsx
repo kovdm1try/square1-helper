@@ -86,7 +86,7 @@ const BaseLayout = () => {
           </IconButton>
         </Box>
       </Box>
-      <Box className={styles.layoutContent}>
+      <Box component="main" className={styles.layoutContent}>
         <Outlet />
       </Box>
 
