@@ -9,7 +9,10 @@ interface ThemeContextType {
 const ThemeContext = createContext<ThemeContextType | null>(null);
 
 export const ThemeContextProvider = ({ children }: { children: ReactNode }) => {
-  const [isDark, setIsDark] = useState(true);
+  const [isDark, setIsDark] = useState(() => {
+    const saved = localStorage.getItem('theme');
+    return saved ? saved === 'dark' : true;
+  });
 
   useEffect(() => {
     document.documentElement.setAttribute('data-theme', isDark ? 'dark' : 'light');
@@ -17,7 +20,11 @@ export const ThemeContextProvider = ({ children }: { children: ReactNode }) => {
     if (meta) meta.content = isDark ? '#0f0f0f' : '#f8f8f8';
   }, [isDark]);
 
-  const toggleTheme = () => setIsDark((prev) => !prev);
+  const toggleTheme = () =>
+    setIsDark((prev) => {
+      localStorage.setItem('theme', prev ? 'light' : 'dark');
+      return !prev;
+    });
 
   return <ThemeContext.Provider value={{ isDark, toggleTheme }}>{children}</ThemeContext.Provider>;
 };
