@@ -17,7 +17,7 @@
   flex-direction: column;
   font-family: var(--font-family-base), sans-serif;
   padding-top: 0;
-  touch-action: none;
+  touch-action: manipulation;
 }
 
 .scrambleHandler.scrambleHandler {
@@ -60,7 +60,6 @@
   height: 30px;
   box-sizing: border-box;
 
-
   @media (width <= 530px) {
     font-size: 14px;
     width: 100%;
@@ -72,7 +71,7 @@
   display: flex;
   @include flex-center;
   flex: 1;
-  font-size: fluid(250, 70);
+  font-size: fluid(250, 60);
   font-variant-numeric: tabular-nums;
   -webkit-user-select: none;
   -moz-user-select: none;
