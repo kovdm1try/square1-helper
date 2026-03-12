@@ -45,7 +45,10 @@ const Burger: FC<BurgerMenuProps> = ({ items }) => {
 
   return (
     <>
-      <div className={`${styles.burger} ${isOpen ? styles.burgerFixed : ''}`}>
+      <div
+        className={`${styles.burger} ${isOpen ? styles.burgerFixed : ''}`}
+        onPointerDown={(e) => e.stopPropagation()}
+      >
         <label className={styles.label}>
           <input type="checkbox" checked={isOpen} onChange={handleToggle} className={styles.input} />
 
@@ -58,7 +61,7 @@ const Burger: FC<BurgerMenuProps> = ({ items }) => {
       </div>
 
       {isOpen && (
-        <div className={styles.overlay} onClick={() => setIsOpen(false)}>
+        <div className={styles.overlay} onClick={() => setIsOpen(false)} onPointerDown={(e) => e.stopPropagation()}>
           <nav className={styles.menu} onClick={(e) => e.stopPropagation()}>
             {items.map((item) => (
               <button
