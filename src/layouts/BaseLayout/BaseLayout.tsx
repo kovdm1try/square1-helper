@@ -65,8 +65,7 @@ const BaseLayout = () => {
                 key={key}
                 startIcon={icon}
                 color="primary"
-                onMouseDown={(e) => e.stopPropagation()}
-                onTouchStart={(e) => e.stopPropagation()}
+                onPointerDown={(e) => e.stopPropagation()}
                 onClick={() => handleNavButtonClick(key)}
                 className={classNames(styles.navButton, { [styles.activeNavButton]: location.pathname === `/${key}` })}
               >
@@ -81,8 +80,7 @@ const BaseLayout = () => {
             onClick={toggleTheme}
             color="primary"
             className={styles.themeToggle}
-            onMouseDown={(e) => e.stopPropagation()}
-            onTouchStart={(e) => e.stopPropagation()}
+            onPointerDown={(e) => e.stopPropagation()}
           >
             {isDark ? <LightModeIcon /> : <DarkModeIcon />}
           </IconButton>

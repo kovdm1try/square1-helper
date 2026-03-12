@@ -79,41 +79,46 @@ const TimerPage = () => {
   useEffect(() => {
     const handleDown = (e: Event) => {
       if (e instanceof KeyboardEvent && e.code !== 'Enter' && e.code !== 'Space') return;
-      if (e instanceof TouchEvent || e instanceof KeyboardEvent) e.preventDefault();
+      if (e instanceof PointerEvent && !e.isPrimary) return;
+      if (e instanceof KeyboardEvent) e.preventDefault();
 
       if (timerStartedRef.current) {
+        timerStartedRef.current = false;
         setTimerStarted(false);
         return;
       }
 
       if (!scrambleRef.current) return;
 
+      timerReadyRef.current = true;
       setTimerReady(true);
     };
 
     const handleUp = (e: Event) => {
       if (e instanceof KeyboardEvent && e.code !== 'Enter' && e.code !== 'Space') return;
+      if (e instanceof PointerEvent && !e.isPrimary) return;
 
       if (timerReadyRef.current && !timerStartedRef.current) {
+        timerStartedRef.current = true;
+        timerReadyRef.current = false;
         setElapsed(0);
         setTimerStarted(true);
+        setTimerReady(false);
+        return;
       }
+      timerReadyRef.current = false;
       setTimerReady(false);
     };
 
-    window.addEventListener('mousedown', handleDown);
-    window.addEventListener('touchstart', handleDown, { passive: false });
+    window.addEventListener('pointerdown', handleDown);
     window.addEventListener('keydown', handleDown);
-    window.addEventListener('mouseup', handleUp);
-    window.addEventListener('touchend', handleUp);
+    window.addEventListener('pointerup', handleUp);
     window.addEventListener('keyup', handleUp);
 
     return () => {
-      window.removeEventListener('mousedown', handleDown);
-      window.removeEventListener('touchstart', handleDown);
+      window.removeEventListener('pointerdown', handleDown);
       window.removeEventListener('keydown', handleDown);
-      window.removeEventListener('mouseup', handleUp);
-      window.removeEventListener('touchend', handleUp);
+      window.removeEventListener('pointerup', handleUp);
       window.removeEventListener('keyup', handleUp);
     };
   }, [dispatch]);
@@ -131,8 +136,7 @@ const TimerPage = () => {
             color="primary"
             disabled={timerStarted || timerReady || waitScrambleLoad || !prevScramble}
             endIcon={<ArrowBackIcon />}
-            onMouseDown={(e) => e.stopPropagation()}
-            onTouchStart={(e) => e.stopPropagation()}
+            onPointerDown={(e) => e.stopPropagation()}
             onClick={() => dispatch(setScramble(prevScramble))}
           >
             Previous Scramble
@@ -143,8 +147,7 @@ const TimerPage = () => {
             color="primary"
             endIcon={<AutorenewIcon />}
             disabled={timerStarted || timerReady || waitScrambleLoad}
-            onMouseDown={(e) => e.stopPropagation()}
-            onTouchStart={(e) => e.stopPropagation()}
+            onPointerDown={(e) => e.stopPropagation()}
             onClick={() => dispatch(fetchScramble())}
           >
             New Scramble

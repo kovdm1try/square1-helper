@@ -17,6 +17,7 @@
   flex-direction: column;
   font-family: var(--font-family-base), sans-serif;
   padding-top: 0;
+  touch-action: none;
 }
 
 .scrambleHandler.scrambleHandler {
