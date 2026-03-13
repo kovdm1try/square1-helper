@@ -1,3 +1,5 @@
+import { memo } from 'react';
+
 import { Box, Grid } from '@mui/material';
 
 import AlgorithmSectionButton from '@/components/AlgorithmSectionButton';
@@ -171,4 +173,4 @@ const AlgorithmSectionPage = () => {
   );
 };
 
-export default AlgorithmSectionPage;
+export default memo(AlgorithmSectionPage);
