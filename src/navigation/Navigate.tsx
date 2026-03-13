@@ -2,6 +2,7 @@ import { Navigate, useRoutes } from 'react-router-dom';
 
 import BaseLayout from '@/layouts/BaseLayout';
 import About from '@/pages/About';
+import AlgorithmSectionPage from '@/pages/AlgorithmSectionPage';
 import ErrorPage from '@/pages/ErrorPage';
 import TimerPage from '@/pages/TimerPage';
 
@@ -11,7 +12,8 @@ const Navigation = () => {
       element: <BaseLayout />,
       children: [
         { index: true, path: '/', element: <Navigate to="/about" replace /> },
-        { path: '/obl-naming', element: <div>naming</div> },
+        { path: '/algorithms', element: <AlgorithmSectionPage /> },
+        { path: '/algorithms/obl', element: <div>obl section</div> },
         { path: '/timer', element: <TimerPage /> },
         { path: 'about', element: <About /> }
       ]

@@ -1,0 +1,51 @@
+@use "@/styles/helpers" as *;
+
+$titleBlockMT: fluid-to-laptop(50, 30);
+
+.sectionButton.sectionButton {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  border: solid 2px var(--color-surface-2);
+  border-radius: var(--radius-s);
+  width: fluid-to-laptop(300, 250);
+  height: fluid-to-laptop(350, 291);
+  padding: 0;
+  box-shadow: 0 0 10px transparent;
+  transition: box-shadow var(--transition-base);
+
+  &:hover {
+    box-shadow: 0 0 10px var(--color-primary);
+  }
+
+  &.notEnable {
+    opacity: 0.6;
+    filter: grayscale(100%);
+    -webkit-filter: grayscale(100%);
+    cursor: not-allowed;
+
+    &:hover {
+      box-shadow: none;
+    }
+  }
+}
+
+.cubeShow.cubeShow {
+  @include square(fluid-to-laptop(300, 250));
+  display: flex;
+  @include flex-center();
+}
+
+.titlesContainer.titlesContainer {
+  margin-top: calc(-1 * $titleBlockMT);
+}
+
+.title.title {
+  font-weight: 600;
+}
+
+.fullTitle.fullTitle {
+  font-weight: 300;
+}

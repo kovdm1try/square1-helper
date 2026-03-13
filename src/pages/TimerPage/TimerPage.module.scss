@@ -44,7 +44,7 @@
   grid-template-columns: repeat(2, 1fr);
   column-gap: 10px;
 
-  @media (width <= 530px) {
+  @media (width <= 575px) {
     grid-template-columns: 1fr;
     grid-template-rows: repeat(2, 1fr);
     width: 100%;
@@ -60,7 +60,7 @@
   height: 30px;
   box-sizing: border-box;
 
-  @media (width <= 530px) {
+  @media (width <= 575px) {
     font-size: 14px;
     width: 100%;
     height: fit-content;

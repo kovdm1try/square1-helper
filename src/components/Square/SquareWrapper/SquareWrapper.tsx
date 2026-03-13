@@ -7,7 +7,7 @@ import CorrCenterLayer from '@/assets/correctCenterLayer.svg?react';
 
 type Block = {
   blockType: 1 | 2;
-  color: 'y' | 'w';
+  color: 'y' | 'w' | 'b';
 };
 
 interface SquareWrapperProps {

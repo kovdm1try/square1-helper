@@ -1,13 +1,28 @@
 *,
 *::before,
 *::after {
-  box-sizing: border-box;
-  -webkit-tap-highlight-color: transparent;
+    box-sizing: border-box;
+    scrollbar-color: var(--color-primary) transparent;
+    scrollbar-width: thin;
+    -webkit-tap-highlight-color: transparent;
+
+    &::-webkit-scrollbar {
+        width: 3px;
+    }
+
+    &::-webkit-scrollbar-track {
+        background: var(--color-primary);
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: transparent;
+        border-radius: 0;
+    }
 }
 
 body {
-  background-color: var(--color-bg);
-  color: var(--color-text-primary);
-  margin: 0;
-  transition: background-color var(--transition-base), color var(--transition-base);
+    background-color: var(--color-bg);
+    color: var(--color-text-primary);
+    margin: 0;
+    transition: background-color var(--transition-base), color var(--transition-base);
 }

@@ -34,6 +34,13 @@ const commonOptions = {
         }
       }
     },
+    MuiTooltip: {
+      styleOverrides: {
+        tooltip: {
+          fontSize: 16
+        }
+      }
+    },
     MuiButton: {
       styleOverrides: {
         root: {

@@ -5,7 +5,7 @@ import styles from './SquareCube.module.scss';
 
 type Block = {
   blockType: 1 | 2;
-  color: 'y' | 'w';
+  color: 'y' | 'w' | 'b';
 };
 
 const EDGE_PATH =
@@ -43,6 +43,12 @@ const DEFAULT_BLOCKS: Block[] = [
   { blockType: 1, color: 'y' },
   { blockType: 2, color: 'y' }
 ];
+
+const COLORS = new Map([
+  ['y', 'yellow'],
+  ['b', 'rgb(70, 70, 70)'],
+  ['w', 'white']
+]);
 
 interface SquareCubeProps {
   blocks: Block[];
@@ -89,7 +95,7 @@ const SquareCube: FC<SquareCubeProps> = ({ blocks, rotate, rotateOnHover }) => {
         <g key={index} transform={`translate(${centerCord}, ${centerCord}) rotate(${blockRotate})`}>
           <path
             d={[EDGE_PATH, CORNER_PATH][block.blockType - 1]}
-            fill={block.color === 'y' ? 'yellow' : 'white'}
+            fill={COLORS.get(block.color)}
             stroke="black"
             strokeWidth="2"
             transform={`rotate(${block.blockType === 2 ? 60 : 0})`}
