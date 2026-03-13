@@ -1,5 +1,23 @@
 @use '@/styles/helpers' as *;
 
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
 .burger {
   @media (width > 1000px) {
     display: none;
@@ -84,13 +102,9 @@
   transition: background-color var(--transition-base);
 }
 
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
+.overlayClosing {
+  animation: fadeOut 380ms forwards;
+  pointer-events: none;
 }
 
 .menu {

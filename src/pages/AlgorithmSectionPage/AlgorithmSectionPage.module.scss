@@ -1,0 +1,15 @@
+@use "@/styles/helpers" as *;
+
+.sectionsGridWrapper {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  padding: 16px 0;
+}
+
+.sectionsGrid.sectionsGrid {
+  display: flex;
+  justify-content: center;
+  align-content: flex-start;
+  gap: 16px;
+}

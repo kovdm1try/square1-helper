@@ -2,6 +2,8 @@
   rotate: var(--rotate);
   transition: rotate var(--transition-slow);
   position: absolute;
+  top: 0;
+  left: 0;
 
   @media (any-hover: hover) {
     &:hover {

@@ -1,4 +1,6 @@
-import { type FC, type ReactNode, useEffect, useRef, useState } from 'react';
+import { type FC, type ReactNode, useEffect, useRef, useState, useTransition } from 'react';
+
+import classNames from 'classnames';
 
 import styles from './Burger.module.scss';
 
@@ -17,6 +19,15 @@ interface BurgerMenuProps {
 const Burger: FC<BurgerMenuProps> = ({ items }) => {
   const [isOpen, setIsOpen] = useState(false);
   const savedScrollY = useRef(0);
+  const isNavigating = useRef(false);
+  const [isPending, startTransition] = useTransition();
+
+  useEffect(() => {
+    if (!isPending && isNavigating.current) {
+      isNavigating.current = false;
+      setIsOpen(false); // eslint-disable-line react-hooks/set-state-in-effect
+    }
+  }, [isPending]);
 
   const handleToggle = () => {
     setIsOpen((prev) => !prev);
@@ -38,15 +49,25 @@ const Burger: FC<BurgerMenuProps> = ({ items }) => {
     }
   }, [isOpen]);
 
+  const closeAndNavigate = (action: () => void) => {
+    isNavigating.current = true;
+    startTransition(() => {
+      action();
+    });
+  };
+
   const handleItemClick = (item: BurgerMenuItem) => {
-    item.action();
-    if (!item.noClose) setIsOpen(false);
+    if (!item.noClose) {
+      closeAndNavigate(item.action);
+    } else {
+      item.action();
+    }
   };
 
   return (
     <>
       <div
-        className={`${styles.burger} ${isOpen ? styles.burgerFixed : ''}`}
+        className={classNames(styles.burger, { [styles.burgerFixed]: isOpen })}
         onPointerDown={(e) => e.stopPropagation()}
       >
         <label className={styles.label}>
@@ -66,7 +87,7 @@ const Burger: FC<BurgerMenuProps> = ({ items }) => {
             {items.map((item) => (
               <button
                 key={item.label}
-                className={`${styles.menuItem} ${item.noClose ? styles.menuItemSeparated : ''}`}
+                className={classNames(styles.menuItem, { [styles.menuItemSeparated]: item.noClose })}
                 onClick={() => handleItemClick(item)}
                 disabled={item.disabled}
               >

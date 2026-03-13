@@ -24,7 +24,7 @@ interface routingButtonsInterface {
 
 const routingButtons: routingButtonsInterface[] = [
   { key: 'about', label: 'About', icon: <InfoIcon />, disabled: false },
-  { key: 'obl-naming', label: 'OBL naming', icon: <ArticleIcon />, disabled: true },
+  { key: 'algorithms', label: 'Algorithms', icon: <ArticleIcon />, disabled: false },
   { key: 'timer', label: 'Timer', icon: <TimerIcon />, disabled: false }
 ];
 
