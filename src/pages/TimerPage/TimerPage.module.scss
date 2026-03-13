@@ -57,13 +57,12 @@
   @include flex-center;
   font-size: fluid(16, 13);
   width: fluid(230, 190);
-  height: 30px;
+  height: 36px !important;
   box-sizing: border-box;
 
   @media (width <= 575px) {
     font-size: 14px;
     width: 100%;
-    height: fit-content;
   }
 }
 
