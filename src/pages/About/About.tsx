@@ -9,9 +9,9 @@ const About = () => {
   return (
     <Box className={styles.about}>
       <Typography variant="body1">
-        Welcome to <b className={styles.important}>Square-1 Helper</b> — a site made by a Square-1 enthusiast, for
-        Square-1 enthusiasts. Whether you occasionally forget an algorithm or want to learn something new, this is your
-        handy reference.
+        Welcome to <b className={styles.important}>SQ1Lab</b> — a site made by a Square-1 enthusiast, for Square-1
+        enthusiasts. Whether you occasionally forget an algorithm or want to learn something new, this is your
+        reference.
       </Typography>
       <br />
       <Typography variant="body1">Currently in active development. Here&apos;s what&apos;s planned:</Typography>
