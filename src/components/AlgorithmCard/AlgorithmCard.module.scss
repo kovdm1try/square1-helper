@@ -6,6 +6,8 @@
   border: solid 3px var(--color-border);
   border-radius: var(--radius-s);
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
 }
 
 .cubeShape.cubeShape {
@@ -27,10 +29,19 @@
 .algorithm.algorithm {
   @extend .cardSection;
   padding: var(--padding-s);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
 }
 
 .algorithmName.algorithmName {
   @extend .cardSection;
   padding: var(--padding-xs);
   font-weight: 600;
+}
+
+.textWrapper.textWrapper {
+  width: fit-content;
+  height: fit-content;
 }

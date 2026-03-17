@@ -14,7 +14,9 @@ const AlgorithmCard: FC<Algorithm> = ({ topSide, bottomSide, algorithmName, algo
         <Box className={styles.cubeShape}>{topSide}</Box>
         <Box className={styles.cubeShape}>{bottomSide}</Box>
       </Box>
-      <Box className={styles.algorithm}>{algorithm}</Box>
+      <Box className={styles.algorithm}>
+        <Box className={styles.textWrapper}>{algorithm}</Box>
+      </Box>
     </Box>
   );
 };
