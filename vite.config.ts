@@ -23,6 +23,7 @@ export default defineConfig({
     },
     rollupOptions: {
       output: {
+        hoistTransitiveImports: false,
         manualChunks: (id) => {
           if (id.includes('cubing') || id.includes('twips')) {
             return 'cubing';
