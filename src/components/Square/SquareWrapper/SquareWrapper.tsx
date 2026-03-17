@@ -5,10 +5,26 @@ import SquareCube from '@/components/Square/SquareCube';
 import styles from './SquareWrapper.module.scss';
 import CorrCenterLayer from '@/assets/correctCenterLayer.svg?react';
 
-type Block = {
-  blockType: 1 | 2;
-  color: 'y' | 'w' | 'b';
-};
+// c - cyan
+// b - black
+// r - red
+// o - orange
+// g - green
+// y - yellow
+// w - white
+export type SideColor = 'b' | 'r' | 'g' | 'o' | 'c';
+
+export type Block =
+  | {
+      blockType: 1;
+      color: 'y' | 'w' | 'b';
+      sideColor?: SideColor;
+    }
+  | {
+      blockType: 2;
+      color: 'y' | 'w' | 'b';
+      sideColor?: [SideColor, SideColor];
+    };
 
 interface SquareWrapperProps {
   blocks: Block[];

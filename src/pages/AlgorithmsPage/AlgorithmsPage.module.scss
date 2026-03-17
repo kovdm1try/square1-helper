@@ -1,0 +1,41 @@
+@use "@/styles/helpers" as *;
+
+.pageWrapper.pageWrapper {
+  flex: 1;
+  display: flex;
+}
+
+.sectionHeader.sectionHeader {
+  width: 100%;
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.sectionName.sectionName {
+  font-size: fluid(50, 25);
+  text-align: center;
+}
+
+.backButton.backButton,
+.spacer.spacer {
+  @include square(40px);
+  padding: 0;
+  margin: 0;
+  min-width: 0;
+}
+
+.backButton.backButton {
+  &:hover {
+    background-color: transparent;
+
+    & .icon.icon {
+      filter: drop-shadow(0 0 5px var(--color-primary));
+    }
+  }
+}
+
+.icon.icon {
+  transition: filter var(--transition-base);
+}
