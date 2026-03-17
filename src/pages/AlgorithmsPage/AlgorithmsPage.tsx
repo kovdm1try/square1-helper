@@ -7,6 +7,7 @@ import { Box, Button, Grid, Typography } from '@mui/material';
 import AlgorithmCard from '@/components/AlgorithmCard';
 
 import { SectionNames } from '@/data';
+import { ALGORITHMS } from '@/data/algorithms';
 
 import styles from './AlgorithmsPage.module.scss';
 
@@ -32,7 +33,15 @@ const AlgorithmsPage: FC<AlgorithmsPageProps> = ({ sectionName }) => {
       </Box>
       <Box className={styles.content}>
         <Grid container className={styles.sectionsGrid}>
-          <AlgorithmCard />
+          {(ALGORITHMS.get(sectionName) ?? []).map(({ topSide, bottomSide, algorithm, algorithmName }, index) => (
+            <AlgorithmCard
+              key={`${algorithmName}-${sectionName}-${index}`}
+              topSide={topSide}
+              bottomSide={bottomSide}
+              algorithm={algorithm}
+              algorithmName={algorithmName}
+            />
+          ))}
         </Grid>
       </Box>
     </Box>

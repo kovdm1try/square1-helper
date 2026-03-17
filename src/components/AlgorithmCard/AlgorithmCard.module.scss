@@ -2,7 +2,7 @@
 
 .cardWrapper.cardWrapper {
   box-sizing: border-box;
-  width: fluid-to-laptop(300, 220);
+  width: fluid-to-laptop(300, 250);
   border: solid 3px var(--color-border);
   border-radius: var(--radius-s);
   overflow: hidden;
@@ -14,12 +14,23 @@
   margin: 10px;
 }
 
-.algorithm.algorithm {
-  font-family: var(--font-family-base), sans-serif;;
+.cardSection {
+  font-family: var(--font-family-base), sans-serif;
   background-color: var(--color-border);
-  padding: var(--padding-xs) var(--padding-s);
   text-align: center;
   font-size: var(--font-size-l);
   white-space: normal;
   word-break: break-word;
+
+}
+
+.algorithm.algorithm {
+  @extend .cardSection;
+  padding: var(--padding-s);
+}
+
+.algorithmName.algorithmName {
+  @extend .cardSection;
+  padding: var(--padding-xs);
+  font-weight: 600;
 }
