@@ -50,8 +50,9 @@
 }
 
 .sectionsGrid.sectionsGrid {
-  display: flex;
+  display: grid;
+  width: 100%;
+  grid-template-columns: repeat(auto-fill, 280px);
   justify-content: center;
-  align-content: flex-start;
   gap: 16px;
 }
