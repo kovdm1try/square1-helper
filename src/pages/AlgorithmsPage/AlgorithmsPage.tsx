@@ -2,7 +2,9 @@ import type { FC } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
-import { Box, Button, Typography } from '@mui/material';
+import { Box, Button, Grid, Typography } from '@mui/material';
+
+import AlgorithmCard from '@/components/AlgorithmCard';
 
 import { SectionNames } from '@/data';
 
@@ -27,6 +29,11 @@ const AlgorithmsPage: FC<AlgorithmsPageProps> = ({ sectionName }) => {
         </Button>
         <Typography className={styles.sectionName}>{SectionNames.get(sectionName)}</Typography>
         <Box className={styles.spacer} />
+      </Box>
+      <Box className={styles.content}>
+        <Grid container className={styles.sectionsGrid}>
+          <AlgorithmCard />
+        </Grid>
       </Box>
     </Box>
   );

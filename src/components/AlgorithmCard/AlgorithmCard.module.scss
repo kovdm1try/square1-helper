@@ -1,3 +1,25 @@
-.algorithm-card {
+@use "@/styles/helpers" as *;
 
+.cardWrapper.cardWrapper {
+  box-sizing: border-box;
+  width: fluid-to-laptop(300, 220);
+  border: solid 3px var(--color-border);
+  border-radius: var(--radius-s);
+  overflow: hidden;
+}
+
+.cubeShape.cubeShape {
+  display: flex;
+  @include flex-center;
+  margin: 10px;
+}
+
+.algorithm.algorithm {
+  font-family: var(--font-family-base), sans-serif;;
+  background-color: var(--color-border);
+  padding: var(--padding-xs) var(--padding-s);
+  text-align: center;
+  font-size: var(--font-size-l);
+  white-space: normal;
+  word-break: break-word;
 }
