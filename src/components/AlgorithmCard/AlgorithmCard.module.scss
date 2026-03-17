@@ -1,0 +1,47 @@
+@use "@/styles/helpers" as *;
+
+.cardWrapper.cardWrapper {
+  box-sizing: border-box;
+  width: 280px;
+  border: solid 3px var(--color-border);
+  border-radius: var(--radius-s);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.cubeShape.cubeShape {
+  display: flex;
+  @include flex-center;
+  margin: 10px;
+}
+
+.cardSection {
+  font-family: var(--font-family-base), sans-serif;
+  background-color: var(--color-border);
+  text-align: center;
+  font-size: var(--font-size-l);
+  white-space: normal;
+  word-break: break-word;
+
+}
+
+.algorithm.algorithm {
+  @extend .cardSection;
+  padding: var(--padding-s);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+}
+
+.algorithmName.algorithmName {
+  @extend .cardSection;
+  padding: var(--padding-xs);
+  font-weight: 600;
+}
+
+.textWrapper.textWrapper {
+  width: fit-content;
+  height: fit-content;
+}

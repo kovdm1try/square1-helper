@@ -1,12 +1,9 @@
 import type { CSSProperties, FC } from 'react';
 import { useMemo } from 'react';
 
-import styles from './SquareCube.module.scss';
+import type { Block } from '@/components/Square/SquareWrapper/SquareWrapper';
 
-type Block = {
-  blockType: 1 | 2;
-  color: 'y' | 'w' | 'b';
-};
+import styles from './SquareCube.module.scss';
 
 const EDGE_PATH =
   'M 2.6794919243112,10 ' +
@@ -17,6 +14,15 @@ const EDGE_PATH =
   'L -2.6794919243112,10 A 3 3 0 0 1 2.6794919243112 10 ' +
   'Z';
 
+const EDGE_SIDE_PATH =
+  'M 25.8819045102521,96.5925826289068\n' +
+  '  L 28.260,105.468\n' +
+  '  A 2 2 0 0 1 26.778 107.4\n' +
+  '  L -26.778,107.4\n' +
+  '  A 2 2 0 0 1 -28.260 105.468\n' +
+  '  L -25.8819045102521,96.5925826289068\n' +
+  '  Z';
+
 const CORNER_PATH =
   'M 10,2.6794919243112 ' +
   'L 96.5925826289068,25.8819045102521 ' +
@@ -26,6 +32,24 @@ const CORNER_PATH =
   'L 30.3225372841204 100 ' +
   'A 4 4 0 0 1 25.8819045102521 96.5925826289068 ' +
   'L 2.6794919243112,10 A 7 7 0 0 1 10 2.6794919243112 ' +
+  'Z';
+
+const CORNER_SIDE_PATH_1 =
+  'M 96.5925826289068,25.8819045102521' +
+  'L 105.468,28.260' +
+  'A 4 4 0 0 1 107.4 30.7745495495494' +
+  'L 107.4,105.47' +
+  'A 4 4 0 0 1 106.8273701580361 106.8273701580361' +
+  'L 96.5925826289068,96.5925826289068' +
+  'Z';
+
+const CORNER_SIDE_PATH_2 =
+  'M 25.8819045102521,96.5925826289068' +
+  'L 28.260,105.468' +
+  'A 4 4 0 0 0 30.7745495495494 107.4' +
+  'L 105.47,107.4' +
+  'A 4 4 0 0 0 106.8273701580361 106.8273701580361' +
+  'L 96.5925826289068,96.5925826289068' +
   'Z';
 
 const PIECE_ANGLE: Record<1 | 2, number> = {
@@ -47,7 +71,11 @@ const DEFAULT_BLOCKS: Block[] = [
 const COLORS = new Map([
   ['y', 'yellow'],
   ['b', 'rgb(70, 70, 70)'],
-  ['w', 'white']
+  ['w', 'white'],
+  ['c', 'rgb(50, 82, 168)'],
+  ['r', 'rgb(168, 50, 50)'],
+  ['o', 'rgb(235, 119, 52)'],
+  ['g', 'rgb(50, 168, 62)']
 ]);
 
 interface SquareCubeProps {
@@ -100,6 +128,42 @@ const SquareCube: FC<SquareCubeProps> = ({ blocks, rotate, rotateOnHover }) => {
             strokeWidth="2"
             transform={`rotate(${block.blockType === 2 ? 60 : 0})`}
           />
+          {block.blockType === 1 && block.sideColor && (
+            <path d={EDGE_SIDE_PATH} fill={COLORS.get(block.sideColor)} stroke="black" strokeWidth="2" />
+          )}
+          {block.blockType === 2 && block.sideColor && (
+            <>
+              <path d={CORNER_SIDE_PATH_1} fill={COLORS.get(block.sideColor[0])} transform="rotate(60)" />
+              <path d={CORNER_SIDE_PATH_2} fill={COLORS.get(block.sideColor[1])} transform="rotate(60)" />
+              <path
+                d="M 25.8819045102521,96.5925826289068
+                 L 96.5925826289068,96.5925826289068
+                 L 96.5925826289068,25.8819045102521
+                 L 105.468,28.260
+                 A 4 4 0 0 1 107.4 30.7745495495494
+                 L 107.4,105.47
+                 A 4 4 0 0 1 106.8273701580361 106.8273701580361
+                 A 4 4 0 0 1 105.47 107.4
+                 L 30.7745495495494,107.4
+                 A 4 4 0 0 1 28.260 105.468
+                 Z"
+                fill="transparent"
+                stroke="black"
+                strokeWidth="2"
+                transform="rotate(60)"
+              />
+              <line
+                x1="106.8273701580361"
+                y1="106.8273701580361"
+                x2="96.592582628906"
+                y2="96.592582628906"
+                strokeWidth="2"
+                stroke="black"
+                strokeLinecap="round"
+                transform="rotate(60)"
+              />
+            </>
+          )}
         </g>
       ))}
     </svg>
