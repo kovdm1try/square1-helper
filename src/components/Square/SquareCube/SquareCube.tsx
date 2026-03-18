@@ -82,6 +82,7 @@ interface SquareCubeProps {
   blocks: Block[];
   rotate: number;
   rotateOnHover: number;
+  svgSize?: number;
 }
 
 type BlockWithRotate = {
@@ -89,8 +90,7 @@ type BlockWithRotate = {
   blockRotate: number;
 };
 
-const SquareCube: FC<SquareCubeProps> = ({ blocks, rotate, rotateOnHover }) => {
-  const svgSize = 280;
+const SquareCube: FC<SquareCubeProps> = ({ blocks, rotate, rotateOnHover, svgSize = 280 }) => {
   const centerCord = Math.round(svgSize / 2);
 
   const processedBlocks: BlockWithRotate[] = useMemo(() => {

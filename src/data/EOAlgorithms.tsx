@@ -18,8 +18,10 @@ export const EOAlgorithms: Algorithm[] = [
           { blockType: 1, color: 'w', sideColor: 'o' },
           { blockType: 2, color: 'y', sideColor: ['g', 'r'] }
         ]}
-        scale={0.65}
+        scale={0.8}
         startRotate={0}
+        svgSize={220}
+        showCenter={false}
       />
     ),
     bottomSide: (
@@ -34,8 +36,10 @@ export const EOAlgorithms: Algorithm[] = [
           { blockType: 1, color: 'w', sideColor: 'g' },
           { blockType: 2, color: 'w', sideColor: ['g', 'o'] }
         ]}
-        scale={0.65}
+        scale={0.8}
         startRotate={0}
+        svgSize={220}
+        showCenter={false}
       />
     ),
     algorithm: processedScramble('(1,0) / (3,0) / (3,0) / (-1,-1) / (-2,1) / (-3,0) / (-1,0)'),
@@ -54,8 +58,10 @@ export const EOAlgorithms: Algorithm[] = [
           { blockType: 1, color: 'y', sideColor: 'g' },
           { blockType: 2, color: 'y', sideColor: ['g', 'r'] }
         ]}
-        scale={0.65}
+        scale={0.8}
         startRotate={0}
+        svgSize={220}
+        showCenter={false}
       />
     ),
     bottomSide: (
@@ -70,8 +76,10 @@ export const EOAlgorithms: Algorithm[] = [
           { blockType: 1, color: 'w', sideColor: 'g' },
           { blockType: 2, color: 'w', sideColor: ['g', 'o'] }
         ]}
-        scale={0.65}
+        scale={0.8}
         startRotate={0}
+        svgSize={220}
+        showCenter={false}
       />
     ),
     algorithm: processedScramble('(1,0) / (-1,-1) / (0,1)'),
@@ -90,8 +98,10 @@ export const EOAlgorithms: Algorithm[] = [
           { blockType: 1, color: 'y', sideColor: 'g' },
           { blockType: 2, color: 'y', sideColor: ['g', 'r'] }
         ]}
-        scale={0.65}
+        scale={0.8}
         startRotate={0}
+        svgSize={220}
+        showCenter={false}
       />
     ),
     bottomSide: (
@@ -106,8 +116,10 @@ export const EOAlgorithms: Algorithm[] = [
           { blockType: 1, color: 'y', sideColor: 'o' },
           { blockType: 2, color: 'w', sideColor: ['g', 'o'] }
         ]}
-        scale={0.65}
+        scale={0.8}
         startRotate={0}
+        svgSize={220}
+        showCenter={false}
       />
     ),
     algorithm: processedScramble('(1,0) / (-4,-1) / (1,1) / (3,0) / (-1,0)'),
@@ -126,8 +138,10 @@ export const EOAlgorithms: Algorithm[] = [
           { blockType: 1, color: 'y', sideColor: 'r' },
           { blockType: 2, color: 'y', sideColor: ['g', 'r'] }
         ]}
-        scale={0.65}
+        scale={0.8}
         startRotate={0}
+        svgSize={220}
+        showCenter={false}
       />
     ),
     bottomSide: (
@@ -142,8 +156,10 @@ export const EOAlgorithms: Algorithm[] = [
           { blockType: 1, color: 'w', sideColor: 'g' },
           { blockType: 2, color: 'w', sideColor: ['g', 'o'] }
         ]}
-        scale={0.65}
+        scale={0.8}
         startRotate={0}
+        svgSize={220}
+        showCenter={false}
       />
     ),
     algorithm: processedScramble('(1,0) / (3,0) / (3,0) / (-1,-1) / (-2,1) / (-4,-1) / (0,1)'),
@@ -162,8 +178,10 @@ export const EOAlgorithms: Algorithm[] = [
           { blockType: 1, color: 'y', sideColor: 'c' },
           { blockType: 2, color: 'y', sideColor: ['g', 'r'] }
         ]}
-        scale={0.65}
+        scale={0.8}
         startRotate={0}
+        svgSize={220}
+        showCenter={false}
       />
     ),
     bottomSide: (
@@ -178,8 +196,10 @@ export const EOAlgorithms: Algorithm[] = [
           { blockType: 1, color: 'y', sideColor: 'o' },
           { blockType: 2, color: 'w', sideColor: ['g', 'o'] }
         ]}
-        scale={0.65}
+        scale={0.8}
         startRotate={0}
+        svgSize={220}
+        showCenter={false}
       />
     ),
     algorithm: processedScramble('(1,0) / (-3,0) / (3,0) / (-1,-1) / (-3,0) / (3,0) / (0,1)'),
@@ -198,8 +218,10 @@ export const EOAlgorithms: Algorithm[] = [
           { blockType: 1, color: 'w', sideColor: 'r' },
           { blockType: 2, color: 'y', sideColor: ['g', 'r'] }
         ]}
-        scale={0.65}
+        scale={0.8}
         startRotate={0}
+        svgSize={220}
+        showCenter={false}
       />
     ),
     bottomSide: (
@@ -214,8 +236,10 @@ export const EOAlgorithms: Algorithm[] = [
           { blockType: 1, color: 'y', sideColor: 'r' },
           { blockType: 2, color: 'w', sideColor: ['g', 'o'] }
         ]}
-        scale={0.65}
+        scale={0.8}
         startRotate={0}
+        svgSize={220}
+        showCenter={false}
       />
     ),
     algorithm: processedScramble('(1,0) / (3,0) / (3,0) / (-1,-1) / (-3,0) / (-3,0) / (0,1)'),
@@ -234,8 +258,10 @@ export const EOAlgorithms: Algorithm[] = [
           { blockType: 1, color: 'w', sideColor: 'g' },
           { blockType: 2, color: 'y', sideColor: ['g', 'r'] }
         ]}
-        scale={0.65}
+        scale={0.8}
         startRotate={0}
+        svgSize={220}
+        showCenter={false}
       />
     ),
     bottomSide: (
@@ -250,8 +276,10 @@ export const EOAlgorithms: Algorithm[] = [
           { blockType: 1, color: 'y', sideColor: 'g' },
           { blockType: 2, color: 'w', sideColor: ['g', 'o'] }
         ]}
-        scale={0.65}
+        scale={0.8}
         startRotate={0}
+        svgSize={220}
+        showCenter={false}
       />
     ),
     algorithm: processedScramble('(1,0) / (-1,-1) / (-2,4) / (-1,-1) / (1,0)'),

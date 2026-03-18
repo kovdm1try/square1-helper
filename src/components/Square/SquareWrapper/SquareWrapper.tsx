@@ -31,13 +31,22 @@ interface SquareWrapperProps {
   startRotate?: number;
   scale?: number;
   rotateOnHover?: number;
+  svgSize?: number;
+  showCenter?: boolean;
 }
 
-const SquareWrapper: FC<SquareWrapperProps> = ({ blocks, startRotate = 0, scale = 1, rotateOnHover = 0 }) => {
+const SquareWrapper: FC<SquareWrapperProps> = ({
+  blocks,
+  startRotate = 0,
+  scale = 1,
+  rotateOnHover = 0,
+  svgSize = 280,
+  showCenter = true
+}) => {
   return (
-    <div className={styles.wrapper} style={{ zoom: scale }}>
-      <CorrCenterLayer className={styles.center} />
-      <SquareCube blocks={blocks} rotate={startRotate} rotateOnHover={rotateOnHover} />
+    <div className={styles.wrapper} style={{ zoom: scale, width: svgSize, height: svgSize }}>
+      {showCenter && <CorrCenterLayer className={styles.center} />}
+      <SquareCube blocks={blocks} rotate={startRotate} rotateOnHover={rotateOnHover} svgSize={svgSize} />
     </div>
   );
 };
