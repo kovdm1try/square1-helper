@@ -1,5 +1,13 @@
 @use "@/styles/helpers" as *;
 
+@keyframes rubberDrop {
+  0%   { transform: translateY(-10px) scaleY(0.7); opacity: 0; }
+  55%  { transform: translateY(4px)   scaleY(1.02); opacity: 1; }
+  75%  { transform: translateY(-3px)  scaleY(0.97); }
+  90%  { transform: translateY(2px)   scaleY(1.02); }
+  100% { transform: translateY(0)     scaleY(1); }
+}
+
 .cardWrapper.cardWrapper {
   box-sizing: border-box;
   width: 280px;
@@ -8,6 +16,8 @@
   overflow: hidden;
   display: flex;
   flex-direction: column;
+  transform-origin: bottom center;
+  animation: rubberDrop 0.38s both;
 }
 
 .cubeShape.cubeShape {
