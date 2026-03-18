@@ -18,7 +18,7 @@ export const EOAlgorithms: Algorithm[] = [
           { blockType: 1, color: 'w', sideColor: 'o' },
           { blockType: 2, color: 'y', sideColor: ['g', 'r'] }
         ]}
-        scale={0.7}
+        scale={0.65}
         startRotate={0}
       />
     ),
@@ -34,7 +34,7 @@ export const EOAlgorithms: Algorithm[] = [
           { blockType: 1, color: 'w', sideColor: 'g' },
           { blockType: 2, color: 'w', sideColor: ['g', 'o'] }
         ]}
-        scale={0.7}
+        scale={0.65}
         startRotate={0}
       />
     ),
@@ -54,7 +54,7 @@ export const EOAlgorithms: Algorithm[] = [
           { blockType: 1, color: 'y', sideColor: 'g' },
           { blockType: 2, color: 'y', sideColor: ['g', 'r'] }
         ]}
-        scale={0.7}
+        scale={0.65}
         startRotate={0}
       />
     ),
@@ -70,7 +70,7 @@ export const EOAlgorithms: Algorithm[] = [
           { blockType: 1, color: 'w', sideColor: 'g' },
           { blockType: 2, color: 'w', sideColor: ['g', 'o'] }
         ]}
-        scale={0.7}
+        scale={0.65}
         startRotate={0}
       />
     ),
@@ -90,7 +90,7 @@ export const EOAlgorithms: Algorithm[] = [
           { blockType: 1, color: 'y', sideColor: 'g' },
           { blockType: 2, color: 'y', sideColor: ['g', 'r'] }
         ]}
-        scale={0.7}
+        scale={0.65}
         startRotate={0}
       />
     ),
@@ -106,7 +106,7 @@ export const EOAlgorithms: Algorithm[] = [
           { blockType: 1, color: 'y', sideColor: 'o' },
           { blockType: 2, color: 'w', sideColor: ['g', 'o'] }
         ]}
-        scale={0.7}
+        scale={0.65}
         startRotate={0}
       />
     ),
@@ -126,7 +126,7 @@ export const EOAlgorithms: Algorithm[] = [
           { blockType: 1, color: 'y', sideColor: 'r' },
           { blockType: 2, color: 'y', sideColor: ['g', 'r'] }
         ]}
-        scale={0.7}
+        scale={0.65}
         startRotate={0}
       />
     ),
@@ -142,7 +142,7 @@ export const EOAlgorithms: Algorithm[] = [
           { blockType: 1, color: 'w', sideColor: 'g' },
           { blockType: 2, color: 'w', sideColor: ['g', 'o'] }
         ]}
-        scale={0.7}
+        scale={0.65}
         startRotate={0}
       />
     ),
@@ -162,7 +162,7 @@ export const EOAlgorithms: Algorithm[] = [
           { blockType: 1, color: 'y', sideColor: 'c' },
           { blockType: 2, color: 'y', sideColor: ['g', 'r'] }
         ]}
-        scale={0.7}
+        scale={0.65}
         startRotate={0}
       />
     ),
@@ -178,7 +178,7 @@ export const EOAlgorithms: Algorithm[] = [
           { blockType: 1, color: 'y', sideColor: 'o' },
           { blockType: 2, color: 'w', sideColor: ['g', 'o'] }
         ]}
-        scale={0.7}
+        scale={0.65}
         startRotate={0}
       />
     ),
@@ -198,7 +198,7 @@ export const EOAlgorithms: Algorithm[] = [
           { blockType: 1, color: 'w', sideColor: 'r' },
           { blockType: 2, color: 'y', sideColor: ['g', 'r'] }
         ]}
-        scale={0.7}
+        scale={0.65}
         startRotate={0}
       />
     ),
@@ -214,7 +214,7 @@ export const EOAlgorithms: Algorithm[] = [
           { blockType: 1, color: 'y', sideColor: 'r' },
           { blockType: 2, color: 'w', sideColor: ['g', 'o'] }
         ]}
-        scale={0.7}
+        scale={0.65}
         startRotate={0}
       />
     ),
@@ -234,7 +234,7 @@ export const EOAlgorithms: Algorithm[] = [
           { blockType: 1, color: 'w', sideColor: 'g' },
           { blockType: 2, color: 'y', sideColor: ['g', 'r'] }
         ]}
-        scale={0.7}
+        scale={0.65}
         startRotate={0}
       />
     ),
@@ -250,7 +250,7 @@ export const EOAlgorithms: Algorithm[] = [
           { blockType: 1, color: 'y', sideColor: 'g' },
           { blockType: 2, color: 'w', sideColor: ['g', 'o'] }
         ]}
-        scale={0.7}
+        scale={0.65}
         startRotate={0}
       />
     ),
