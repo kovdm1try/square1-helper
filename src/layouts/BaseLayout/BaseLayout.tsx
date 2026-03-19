@@ -1,4 +1,4 @@
-import type { ReactElement } from 'react';
+import { type ReactElement, useEffect } from 'react';
 import { Outlet, useLocation, useNavigate } from 'react-router-dom';
 
 import ArticleIcon from '@mui/icons-material/Article';
@@ -33,6 +33,10 @@ const BaseLayout = () => {
   const location = useLocation();
 
   const { isDark, toggleTheme } = useThemeContext();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location.pathname]);
 
   const handleNavButtonClick = (key: string) => {
     navigate(`/${key}`);

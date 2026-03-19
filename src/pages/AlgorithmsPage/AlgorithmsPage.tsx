@@ -1,4 +1,4 @@
-import type { FC } from 'react';
+import { type FC } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
@@ -14,7 +14,6 @@ import styles from './AlgorithmsPage.module.scss';
 interface AlgorithmsPageProps {
   sectionName: string;
 }
-
 const AlgorithmsPage: FC<AlgorithmsPageProps> = ({ sectionName }) => {
   const navigate = useNavigate();
 

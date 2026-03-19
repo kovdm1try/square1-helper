@@ -6,7 +6,9 @@ import type { Algorithm } from '@/data/algorithms';
 
 import styles from './AlgorithmCard.module.scss';
 
-const AlgorithmCard: FC<Algorithm> = ({ topSide, bottomSide, algorithmName, algorithm }) => {
+type AlgorithmCardProps = Algorithm;
+
+const AlgorithmCard: FC<AlgorithmCardProps> = ({ topSide, bottomSide, algorithmName, algorithm }) => {
   return (
     <Box className={styles.cardWrapper}>
       <Box className={styles.algorithmName}>{algorithmName}</Box>

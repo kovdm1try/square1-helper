@@ -16,10 +16,12 @@ export default defineConfig({
     exclude: ['cubing']
   },
   build: {
+    cssCodeSplit: false,
     target: 'esnext',
     minify: 'terser',
     terserOptions: {
-      compress: { passes: 2 }
+      compress: { passes: 2 },
+      format: { comments: false }
     },
     rollupOptions: {
       output: {
