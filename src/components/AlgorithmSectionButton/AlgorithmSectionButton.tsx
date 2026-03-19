@@ -36,6 +36,7 @@ const AlgorithmSectionButton: FC<section> = ({ title, fullTitle, isEnable, cubeV
       open={tooltipOpen}
       onOpen={() => setTooltipOpen(true)}
       onClose={() => setTooltipOpen(false)}
+      slotProps={{ popper: { style: { zIndex: 4 } } }}
     >
       <Button
         className={classNames(styles.sectionButton, { [styles.notEnable]: !isEnable })}
