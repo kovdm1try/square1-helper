@@ -1,4 +1,4 @@
-import type { FC, ReactNode } from 'react';
+import { type FC, type ReactNode, useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 import { Box, Button, Tooltip } from '@mui/material';
@@ -16,13 +16,27 @@ export type section = {
 
 const AlgorithmSectionButton: FC<section> = ({ title, fullTitle, isEnable, cubeView, url }) => {
   const navigate = useNavigate();
+  const [tooltipOpen, setTooltipOpen] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => setTooltipOpen(false);
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const onClickSection = () => {
     navigate(url);
   };
 
   return (
-    <Tooltip title={!isEnable ? 'Coming soon' : ''} arrow enterTouchDelay={0}>
+    <Tooltip
+      title={!isEnable ? 'Coming soon' : ''}
+      arrow
+      enterTouchDelay={0}
+      open={tooltipOpen}
+      onOpen={() => setTooltipOpen(true)}
+      onClose={() => setTooltipOpen(false)}
+    >
       <Button
         className={classNames(styles.sectionButton, { [styles.notEnable]: !isEnable })}
         disableRipple={!isEnable}
