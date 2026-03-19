@@ -35,6 +35,10 @@ const BaseLayout = () => {
   const { isDark, toggleTheme } = useThemeContext();
 
   useEffect(() => {
+    history.scrollRestoration = 'manual';
+  }, []);
+
+  useEffect(() => {
     window.scrollTo(0, 0);
   }, [location.pathname]);
 
