@@ -6,19 +6,11 @@ import type { Algorithm } from '@/data/algorithms';
 
 import styles from './AlgorithmCard.module.scss';
 
-interface AlgorithmCardProps extends Algorithm {
-  animationDelay?: number;
-}
+type AlgorithmCardProps = Algorithm;
 
-const AlgorithmCard: FC<AlgorithmCardProps> = ({
-  topSide,
-  bottomSide,
-  algorithmName,
-  algorithm,
-  animationDelay = 0
-}) => {
+const AlgorithmCard: FC<AlgorithmCardProps> = ({ topSide, bottomSide, algorithmName, algorithm }) => {
   return (
-    <Box className={styles.cardWrapper} style={{ animationDelay: `${animationDelay}s` }}>
+    <Box className={styles.cardWrapper}>
       <Box className={styles.algorithmName}>{algorithmName}</Box>
       <Box className={styles.shape}>
         <Box className={styles.cubeShape}>{topSide}</Box>
