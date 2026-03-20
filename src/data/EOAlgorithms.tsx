@@ -22,6 +22,7 @@ export const EOAlgorithms: Algorithm[] = [
         startRotate={0}
         svgSize={220}
         showCenter={false}
+        showSlice={true}
       />
     ),
     bottomSide: (
@@ -40,6 +41,7 @@ export const EOAlgorithms: Algorithm[] = [
         startRotate={0}
         svgSize={220}
         showCenter={false}
+        showSlice={true}
       />
     ),
     algorithm: processedScramble('(1,0) / (3,0) / (3,0) / (-1,-1) / (-2,1) / (-3,0) / (-1,0)'),
@@ -62,6 +64,7 @@ export const EOAlgorithms: Algorithm[] = [
         startRotate={0}
         svgSize={220}
         showCenter={false}
+        showSlice={true}
       />
     ),
     bottomSide: (
@@ -80,6 +83,7 @@ export const EOAlgorithms: Algorithm[] = [
         startRotate={0}
         svgSize={220}
         showCenter={false}
+        showSlice={true}
       />
     ),
     algorithm: processedScramble('(1,0) / (-1,-1) / (0,1)'),
@@ -102,6 +106,7 @@ export const EOAlgorithms: Algorithm[] = [
         startRotate={0}
         svgSize={220}
         showCenter={false}
+        showSlice={true}
       />
     ),
     bottomSide: (
@@ -120,6 +125,7 @@ export const EOAlgorithms: Algorithm[] = [
         startRotate={0}
         svgSize={220}
         showCenter={false}
+        showSlice={true}
       />
     ),
     algorithm: processedScramble('(1,0) / (-4,-1) / (1,1) / (3,0) / (-1,0)'),
@@ -142,6 +148,7 @@ export const EOAlgorithms: Algorithm[] = [
         startRotate={0}
         svgSize={220}
         showCenter={false}
+        showSlice={true}
       />
     ),
     bottomSide: (
@@ -160,6 +167,7 @@ export const EOAlgorithms: Algorithm[] = [
         startRotate={0}
         svgSize={220}
         showCenter={false}
+        showSlice={true}
       />
     ),
     algorithm: processedScramble('(1,0) / (3,0) / (3,0) / (-1,-1) / (-2,1) / (-4,-1) / (0,1)'),
@@ -182,6 +190,7 @@ export const EOAlgorithms: Algorithm[] = [
         startRotate={0}
         svgSize={220}
         showCenter={false}
+        showSlice={true}
       />
     ),
     bottomSide: (
@@ -200,6 +209,7 @@ export const EOAlgorithms: Algorithm[] = [
         startRotate={0}
         svgSize={220}
         showCenter={false}
+        showSlice={true}
       />
     ),
     algorithm: processedScramble('(1,0) / (-3,0) / (3,0) / (-1,-1) / (-3,0) / (3,0) / (0,1)'),
@@ -222,6 +232,7 @@ export const EOAlgorithms: Algorithm[] = [
         startRotate={0}
         svgSize={220}
         showCenter={false}
+        showSlice={true}
       />
     ),
     bottomSide: (
@@ -240,6 +251,7 @@ export const EOAlgorithms: Algorithm[] = [
         startRotate={0}
         svgSize={220}
         showCenter={false}
+        showSlice={true}
       />
     ),
     algorithm: processedScramble('(1,0) / (3,0) / (3,0) / (-1,-1) / (-3,0) / (-3,0) / (0,1)'),
@@ -262,6 +274,7 @@ export const EOAlgorithms: Algorithm[] = [
         startRotate={0}
         svgSize={220}
         showCenter={false}
+        showSlice={true}
       />
     ),
     bottomSide: (
@@ -280,6 +293,7 @@ export const EOAlgorithms: Algorithm[] = [
         startRotate={0}
         svgSize={220}
         showCenter={false}
+        showSlice={true}
       />
     ),
     algorithm: processedScramble('(1,0) / (-1,-1) / (-2,4) / (-1,-1) / (1,0)'),
