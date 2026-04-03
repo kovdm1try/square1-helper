@@ -35,7 +35,7 @@ const SECTIONS: section[] = [
   {
     title: 'CO',
     fullTitle: 'Corner Orientation',
-    isEnable: false,
+    isEnable: true,
     cubeView: (
       <SquareWrapper
         blocks={[

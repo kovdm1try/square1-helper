@@ -35,6 +35,7 @@ interface SquareWrapperProps {
   svgSize?: number;
   showCenter?: boolean;
   showSlice?: boolean;
+  flipSlice?: boolean;
 }
 
 const SquareWrapper: FC<SquareWrapperProps> = ({
@@ -44,7 +45,8 @@ const SquareWrapper: FC<SquareWrapperProps> = ({
   rotateOnHover = 0,
   svgSize = 280,
   showCenter = true,
-  showSlice = false
+  showSlice = false,
+  flipSlice = false
 }) => {
   const overlayOffset = (svgSize - 280) / 2;
   const hasSides = blocks.some((b) => b.sideColor !== undefined);
@@ -54,7 +56,14 @@ const SquareWrapper: FC<SquareWrapperProps> = ({
     <div className={styles.wrapper} style={{ zoom: scale, width: svgSize, height: svgSize }}>
       {showCenter && <CorrCenterLayer className={styles.center} style={centerStyle} />}
       <SquareCube blocks={blocks} rotate={startRotate} rotateOnHover={rotateOnHover} svgSize={svgSize} />
-      {showSlice && <SliceLine className={styles.sliceline} width={svgSize} height={svgSize} />}
+      {showSlice && (
+        <SliceLine
+          className={styles.sliceline}
+          width={svgSize}
+          height={svgSize}
+          style={flipSlice ? { transform: 'scaleX(-1)' } : undefined}
+        />
+      )}
     </div>
   );
 };
