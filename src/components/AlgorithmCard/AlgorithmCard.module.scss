@@ -58,4 +58,8 @@
   padding: 20px;
   gap: 30px;
   @include flex-center;
+
+  &.noGap {
+    gap: 0;
+  }
 }
