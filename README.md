@@ -9,18 +9,35 @@
 ![SCSS](https://img.shields.io/badge/SCSS-CC6699?style=for-the-badge&logo=sass&logoColor=white)
 ![GitHub Pages](https://img.shields.io/badge/GitHub_Pages-222222?style=for-the-badge&logo=github&logoColor=white)
 
-A web app for Square-1 speedcubing enthusiasts. Provides a reference for OBL (Orient Both Layers) algorithms, shape naming, and a built-in solve timer.
+A web app for Square-1 speedcubing enthusiasts. Provides algorithm references for all solving stages and a built-in solve timer.
 
-> Currently in active development — more features coming soon.
+> Currently in active development — more algorithm sections coming soon.
+
+---
+
+## Pages
+
+| Page | Status |
+|---|---|
+| **About** — project info and navigation overview | Ready |
+| **Timer** — keyboard & touchscreen solve timer with scramble generator | Ready |
+| **Algorithms / CO** — Corner Orientation algorithms | Ready |
+| **Algorithms / EO** — Edge Orientation algorithms | Ready |
+| **Algorithms / Parity** — Parity algorithms | Ready |
+| **Algorithms / CS** — Cube Shape algorithms | In development |
+| **Algorithms / OBL** — Orient Both Layers algorithms | In development |
+| **Algorithms / CP** — Corner Permutation algorithms | In development |
+| **Algorithms / EP** — Edge Permutation algorithms | In development |
+| **Algorithms / CSP** — Cube Shape Parity algorithms | In development |
 
 ---
 
 ## Features
 
 - **Solve Timer** — keyboard & touchscreen timer with scramble generator (powered by [cubing.js](https://github.com/cubing/cubing.js))
+- **Algorithm Reference** — step-by-step algorithm sections with visual cube state diagrams
 - **Dark / Light theme** — system-aware with manual toggle
 - **Responsive** — works on desktop and mobile
-- Algorithms(Coming soon...)
 ---
 
 ## Tech Stack
