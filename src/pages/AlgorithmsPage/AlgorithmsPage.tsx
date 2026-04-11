@@ -32,15 +32,18 @@ const AlgorithmsPage: FC<AlgorithmsPageProps> = ({ sectionName }) => {
       </Box>
       <Box className={styles.content}>
         <Grid container className={styles.sectionsGrid}>
-          {(ALGORITHMS.get(sectionName) ?? []).map(({ topSide, bottomSide, algorithm, algorithmName }, index) => (
-            <AlgorithmCard
-              key={`${algorithmName}-${sectionName}-${index}`}
-              topSide={topSide}
-              bottomSide={bottomSide}
-              algorithm={algorithm}
-              algorithmName={algorithmName}
-            />
-          ))}
+          {(ALGORITHMS.get(sectionName) ?? []).map(
+            ({ topSide, bottomSide, algorithm, algorithmName, showBottomSide }, index) => (
+              <AlgorithmCard
+                key={`${algorithmName}-${sectionName}-${index}`}
+                topSide={topSide}
+                bottomSide={bottomSide}
+                algorithm={algorithm}
+                algorithmName={algorithmName}
+                showBottomSide={showBottomSide}
+              />
+            )
+          )}
         </Grid>
       </Box>
     </Box>

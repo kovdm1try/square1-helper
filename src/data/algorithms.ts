@@ -14,6 +14,7 @@ export type Algorithm = {
   bottomSide: ReactNode;
   algorithm: string;
   algorithmName: string;
+  showBottomSide?: boolean;
 };
 
 export const ALGORITHMS = new Map<string, Algorithm[]>([

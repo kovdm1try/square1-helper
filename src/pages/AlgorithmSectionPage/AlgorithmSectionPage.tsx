@@ -140,18 +140,18 @@ const SECTIONS: section[] = [
   {
     title: 'Parity',
     fullTitle: '',
-    isEnable: false,
+    isEnable: true,
     cubeView: (
       <SquareWrapper
         blocks={[
-          { blockType: 1, color: 'y' },
-          { blockType: 2, color: 'y' },
-          { blockType: 1, color: 'y' },
-          { blockType: 2, color: 'y' },
-          { blockType: 1, color: 'y' },
-          { blockType: 2, color: 'y' },
-          { blockType: 1, color: 'y' },
-          { blockType: 2, color: 'y' }
+          { blockType: 1, color: 'y', sideColor: 'g' },
+          { blockType: 2, color: 'y', sideColor: ['r', 'c'] },
+          { blockType: 1, color: 'y', sideColor: 'c' },
+          { blockType: 2, color: 'y', sideColor: ['c', 'o'] },
+          { blockType: 1, color: 'y', sideColor: 'o' },
+          { blockType: 2, color: 'y', sideColor: ['o', 'g'] },
+          { blockType: 1, color: 'y', sideColor: 'r' },
+          { blockType: 2, color: 'y', sideColor: ['g', 'r'] }
         ]}
         scale={0.8}
       />
