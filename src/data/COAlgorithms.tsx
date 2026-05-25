@@ -268,13 +268,13 @@ export const COAlgorithms: Algorithm[] = [
       <SquareWrapper
         blocks={[
           { blockType: 1, color: 'b', sideColor: 'b' },
-          { blockType: 2, color: 'y', sideColor: ['r', 'c'] },
+          { blockType: 2, color: 'w', sideColor: ['o', 'c'] },
           { blockType: 1, color: 'b', sideColor: 'b' },
-          { blockType: 2, color: 'y', sideColor: ['c', 'o'] },
+          { blockType: 2, color: 'w', sideColor: ['c', 'r'] },
           { blockType: 1, color: 'b', sideColor: 'b' },
-          { blockType: 2, color: 'y', sideColor: ['o', 'g'] },
+          { blockType: 2, color: 'w', sideColor: ['r', 'g'] },
           { blockType: 1, color: 'b', sideColor: 'b' },
-          { blockType: 2, color: 'y', sideColor: ['g', 'r'] }
+          { blockType: 2, color: 'w', sideColor: ['g', 'o'] }
         ]}
         scale={0.8}
         startRotate={0}
@@ -287,13 +287,13 @@ export const COAlgorithms: Algorithm[] = [
       <SquareWrapper
         blocks={[
           { blockType: 1, color: 'b', sideColor: 'b' },
-          { blockType: 2, color: 'w', sideColor: ['o', 'c'] },
+          { blockType: 2, color: 'y', sideColor: ['r', 'c'] },
           { blockType: 1, color: 'b', sideColor: 'b' },
-          { blockType: 2, color: 'w', sideColor: ['c', 'r'] },
+          { blockType: 2, color: 'y', sideColor: ['c', 'o'] },
           { blockType: 1, color: 'b', sideColor: 'b' },
-          { blockType: 2, color: 'w', sideColor: ['r', 'g'] },
+          { blockType: 2, color: 'y', sideColor: ['o', 'g'] },
           { blockType: 1, color: 'b', sideColor: 'b' },
-          { blockType: 2, color: 'w', sideColor: ['g', 'o'] }
+          { blockType: 2, color: 'y', sideColor: ['g', 'r'] }
         ]}
         scale={0.8}
         startRotate={0}
